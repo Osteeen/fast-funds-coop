@@ -892,29 +892,10 @@ async function createTeamMember(req, res) {
       email,
     });
 
-    // Send welcome email with credentials hint
-    const nodemailer = require('nodemailer');
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '587', 10),
-      secure: process.env.EMAIL_SECURE === 'true',
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-    });
-
-    transporter
-      .sendMail({
-        from: `"Kufre Loans" <${process.env.EMAIL_FROM}>`,
-        to: email,
-        subject: 'Welcome to the Kufre Loans Team',
-        html: `
-          <p>Hi ${first_name},</p>
-          <p>Your Kufre Loans admin account has been created with the role: <strong>${role}</strong>.</p>
-          <p>You can log in at: <a href="${process.env.CLIENT_URL}/admin/login">${process.env.CLIENT_URL}/admin/login</a></p>
-          <p>Your temporary password: <strong>${password}</strong></p>
-          <p>Please change your password immediately after logging in.</p>
-        `,
-      })
-      .catch((e) => console.error('[CreateTeamMember] Email error:', e.message));
+    // Send welcome email with credentials
+    emailService.sendTeamMemberWelcome({ first_name, email }, role, password).catch(
+      (e) => console.error('[CreateTeamMember] Email error:', e.message)
+    );
 
     return res.status(201).json({
       success: true,

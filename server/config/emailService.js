@@ -1,17 +1,5 @@
-const nodemailer = require('nodemailer');
-
-// ---------------------------------------------------------------------------
-// Transporter
-// ---------------------------------------------------------------------------
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT || '587', 10),
-  secure: process.env.EMAIL_SECURE === 'true', // true for 465, false for others
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const { Resend } = require('resend');
+const resendClient = new Resend(process.env.RESEND_API_KEY);
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -93,14 +81,18 @@ function buildEmailHtml(title, bodyHtml) {
  */
 async function sendMail(to, subject, html) {
   try {
-    const info = await transporter.sendMail({
+    const { data, error } = await resendClient.emails.send({
       from: FROM_ADDRESS,
       to,
       subject,
       html,
     });
-    console.log(`[EmailService] Sent "${subject}" to ${to} — ID: ${info.messageId}`);
-    return info;
+    if (error) {
+      console.error(`[EmailService] Failed to send "${subject}" to ${to}:`, error.message);
+      return null;
+    }
+    console.log(`[EmailService] Sent "${subject}" to ${to} — ID: ${data.id}`);
+    return data;
   } catch (err) {
     console.error(`[EmailService] Failed to send "${subject}" to ${to}:`, err.message);
   }
@@ -296,6 +288,29 @@ const emailService = {
       <p>Hi ${user.first_name}, the Kufre Loans team has sent you a message regarding your Loan #${loan.id}.</p>
       <p>Log in to your portal to read and respond to the message.</p>
       <a href="${CLIENT_URL}/dashboard/loans/${loan.id}?tab=messages" class="btn">View Message</a>
+      `
+    );
+    await sendMail(user.email, subject, html);
+  },
+
+  /**
+   * Welcome email for new team members added by super admin.
+   */
+  async sendTeamMemberWelcome(user, role, password) {
+    const subject = 'Welcome to the Kufre Loans Team';
+    const html = buildEmailHtml(
+      subject,
+      `
+      <h2>Welcome to the Team, ${user.first_name}!</h2>
+      <p>Your Kufre Loans admin account has been created. Here are your login details:</p>
+      <div class="info-box">
+        <p><strong>Email:</strong> ${user.email}</p>
+        <p><strong>Password:</strong> ${password}</p>
+        <p><strong>Role:</strong> ${role}</p>
+      </div>
+      <p>Please log in and change your password immediately.</p>
+      <a href="${CLIENT_URL}/admin/login" class="btn">Log In Now</a>
+      <p style="margin-top: 20px; font-size: 13px; color: #777;">If you did not expect this email, please contact <a href="mailto:${SUPPORT_EMAIL}">${SUPPORT_EMAIL}</a>.</p>
       `
     );
     await sendMail(user.email, subject, html);
