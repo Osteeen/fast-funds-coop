@@ -3,7 +3,7 @@ import AdminLayout from '../../components/admin/AdminLayout'
 import PageHeader from '../../components/common/PageHeader'
 import LoadingSpinner from '../../components/common/LoadingSpinner'
 import EmptyState from '../../components/common/EmptyState'
-import api, { formatDate } from '../../utils/api'
+import api, { formatDateTime } from '../../utils/api'
 import { HiClipboardList } from 'react-icons/hi'
 
 const actionColors = {
@@ -83,7 +83,7 @@ export default function AdminAuditLogPage() {
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
-                    {['Date & Time', 'Action', 'Performed By', 'Entity', 'Details'].map((h) => (
+                    {['Date & Time', 'Action', 'Performed By', 'Reference'].map((h) => (
                       <th key={h} className="text-left px-4 py-3 font-medium text-gray-600">{h}</th>
                     ))}
                   </tr>
@@ -92,7 +92,7 @@ export default function AdminAuditLogPage() {
                   {logs.map((log) => (
                     <tr key={log.id} className="hover:bg-gray-50">
                       <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
-                        {formatDate(log.created_at)}
+                        {formatDateTime(log.created_at)}
                       </td>
                       <td className="px-4 py-3">
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${actionColors[log.action] || 'bg-gray-100 text-gray-600'}`}>
@@ -105,11 +105,8 @@ export default function AdminAuditLogPage() {
                         </div>
                         <div className="text-xs text-gray-400">{log.email}</div>
                       </td>
-                      <td className="px-4 py-3 text-gray-600 capitalize">
-                        {log.entity_type?.replace(/_/g, ' ')} #{log.entity_id}
-                      </td>
-                      <td className="px-4 py-3 text-gray-500 text-xs max-w-xs truncate">
-                        {log.metadata ? JSON.stringify(log.metadata) : '—'}
+                      <td className="px-4 py-3 text-gray-500 text-xs">
+                        {log.entity_type ? `${log.entity_type.replace(/_/g, ' ')} #${log.entity_id}` : '—'}
                       </td>
                     </tr>
                   ))}
