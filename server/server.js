@@ -12,6 +12,9 @@ const { startRepaymentEngine } = require('./jobs/repaymentEngine');
 
 const app = express();
 
+// Trust Railway/Vercel proxy
+app.set('trust proxy', 1);
+
 // Ensure uploads directory exists
 const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) {

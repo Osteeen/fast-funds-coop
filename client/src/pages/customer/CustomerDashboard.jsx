@@ -175,7 +175,9 @@ export default function CustomerDashboard() {
             {activeLoan ? (
               <div className="card">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="font-semibold text-gray-900">Active Loan</h2>
+                  <h2 className="font-semibold text-gray-900">
+                    {['disbursed', 'approved'].includes(activeLoan.status) ? 'Active Loan' : 'Loan Application'}
+                  </h2>
                   <StatusBadge status={activeLoan.status} />
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
