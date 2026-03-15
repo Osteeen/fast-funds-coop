@@ -40,7 +40,8 @@ export default function AdminTeamPage() {
     const fetchTeam = async () => {
       try {
         const res = await api.get('/admin/team')
-        setTeam(Array.isArray(res.data.team) ? res.data.team : (Array.isArray(res.data) ? res.data : []))
+        const data = res.data?.data || res.data
+        setTeam(Array.isArray(data.members) ? data.members : (Array.isArray(data) ? data : []))
       } catch {
         setError('Failed to load team members.')
       } finally {
@@ -74,7 +75,7 @@ export default function AdminTeamPage() {
     try {
       const { confirm_password, ...payload } = form
       const res = await api.post('/admin/team', payload)
-      const newMember = res.data?.member || res.data?.user || res.data
+      const newMember = res.data?.data?.member || res.data?.member || res.data?.user || res.data
       setTeam((prev) => [newMember, ...prev])
       setShowModal(false)
       setForm(defaultForm)

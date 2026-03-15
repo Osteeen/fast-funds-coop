@@ -903,7 +903,7 @@ async function createTeamMember(req, res) {
 
     transporter
       .sendMail({
-        from: `"Kufre Loans" <${process.env.EMAIL_USER}>`,
+        from: `"Kufre Loans" <${process.env.EMAIL_FROM}>`,
         to: email,
         subject: 'Welcome to the Kufre Loans Team',
         html: `
