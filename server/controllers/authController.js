@@ -52,8 +52,19 @@ async function register(req, res) {
     if (existing.rows.length > 0) {
       return res.status(409).json({
         success: false,
-        message: 'An account with this email address already exists.',
+        message: 'An account with this email address already exists. Please log in instead.',
       });
+    }
+
+    // Check for duplicate BVN
+    if (bvn) {
+      const existingBvn = await query('SELECT id FROM users WHERE bvn = $1', [bvn]);
+      if (existingBvn.rows.length > 0) {
+        return res.status(409).json({
+          success: false,
+          message: 'An account with this BVN already exists. Please log in instead.',
+        });
+      }
     }
 
     // Hash password
