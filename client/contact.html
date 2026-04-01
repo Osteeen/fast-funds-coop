@@ -119,13 +119,13 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
 
 <nav id="navbar">
   <div class="nav-inner">
-    <div class="logo"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
+    <div class="logo"><a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
     <ul class="nav-links">
       <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#savings">Account Opening</a><a href="products.html#savings">Savings Account</a><a href="products.html#lending">Loans</a><a href="products.html#cards">ATM Cards</a></div></li>
       <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#lending">Business Loans</a><a href="products.html#business">Corporate Accounts</a><a href="products.html#business">POS Terminal</a></div></li>
       <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#business">Corporate Banking</a><a href="products.html#insurance">Investments</a><a href="products.html#other">Proof of Funds</a></div></li>
       <li><a href="products.html">Services</a></li>
-      <li><a href="fastfunds.html#partners">Partners</a></li>
+      <li><a href="index.html#partners">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
@@ -137,14 +137,14 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-header"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button></div>
-  <ul class="mobile-nav-links"><li><a href="fastfunds.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul>
+  <div class="mobile-menu-header"><a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button></div>
+  <ul class="mobile-nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul>
   <div class="mobile-actions"><a href="internet-banking.html" class="btn-outline">Internet Banking</a><a href="account-opening.html" class="btn-primary">Open Account</a></div>
 </div>
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="fastfunds.html">Home</a><i class="fas fa-chevron-right"></i><span>Contact Us</span></div>
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Contact Us</span></div>
     <h1>Get in Touch</h1>
     <p>We're always here to help. Reach out through any of our channels and our team will respond promptly.</p>
   </div>
@@ -231,7 +231,7 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><a href="fastfunds.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a><p>Empowering members, building futures together.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+      <div class="footer-brand"><a href="index.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a><p>Empowering members, building futures together.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
       <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html#lending">Personal Loans</a></li><li><a href="products.html#lending">Business Loans</a></li><li><a href="products.html#savings">Savings Account</a></li><li><a href="products.html#cards">ATM Cards</a></li></ul></div>
       <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
       <div class="footer-col"><h5>Support</h5><ul><li><a href="help.html">Help Center</a></li><li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
@@ -253,4 +253,11 @@ function submitForm(){
   const sub=document.getElementById('subject').value;
   const msg=document.getElementById('message').value.trim();
   if(!fn||!ln||!em||!sub||!msg){alert('Please fill in all required fields.');return;}
-  if(!em.incl
+  if(!em.includes('@')){alert('Please enter a valid email address.');return;}
+  alert('Thank you! Your message has been submitted. We\'ll respond within 24 hours.');
+}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

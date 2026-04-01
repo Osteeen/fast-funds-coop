@@ -150,7 +150,7 @@ footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px
 <nav id="navbar">
   <div class="nav-inner">
     <div class="logo">
-      <a href="fastfunds.html" class="logo-mark">
+      <a href="index.html" class="logo-mark">
         <div class="logo-icon">FF</div>
         <div class="logo-text">
           <span class="logo-name">Fastfunds</span>
@@ -187,7 +187,7 @@ footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px
         </div>
       </li>
       <li><a href="products.html" class="active">Services</a></li>
-      <li><a href="fastfunds.html#partners">Partners</a></li>
+      <li><a href="index.html#partners">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
@@ -200,11 +200,11 @@ footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-header">
-    <a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
     <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   </div>
   <ul class="mobile-nav-links">
-    <li><a href="fastfunds.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products & Services</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="news.html">News</a></li>
@@ -220,7 +220,7 @@ footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb">
-      <a href="fastfunds.html">Home</a>
+      <a href="index.html">Home</a>
       <i class="fas fa-chevron-right"></i>
       <span>Products & Services</span>
     </div>
@@ -757,7 +757,7 @@ footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="fastfunds.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;">
+        <a href="index.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;">
           <div class="logo-icon">FF</div>
           <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
         </a>
@@ -791,4 +791,11 @@ document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 // Highlight active category in sticky nav
 const catLinks=document.querySelectorAll('.cat-link');
 const sections=document.querySelectorAll('.product-section');
-window.addEventLi
+window.addEventListener('scroll',()=>{
+  catLinks.forEach(link=>link.classList.remove('active'));
+  const current=Array.from(sections).reverse().find(s=>s.getBoundingClientRect().top<100);
+  if(current){const link=document.querySelector('.cat-link[href="#'+current.id+'"]');if(link)link.classList.add('active');}
+});
+</script>
+</body>
+</html>
