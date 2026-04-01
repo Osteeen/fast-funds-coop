@@ -1153,9 +1153,10 @@
           <a href="corporate.html#ngo">NGO Accounts</a>
         </div>
       </li>
-      <li><a href="#products">Services</a></li>
-      <li><a href="about.html#partners">Partners</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
       <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
@@ -1785,17 +1786,18 @@
     return 'Finance';
   }
 
+  function seedNum(str) { let h=0; for(let i=0;i<str.length;i++){h=(Math.imul(31,h)+str.charCodeAt(i))|0;} return Math.abs(h)%1000; }
+
   function buildNewsCard(item, idx) {
-    const bg = BG_GRADIENTS[idx % BG_GRADIENTS.length];
-    const icon = ICONS[idx % ICONS.length];
     const cat = getCategory(item.title);
     const desc = item.description ? stripHtml(item.description) : 'Read the full article for more details.';
     const date = formatDate(item.pubDate);
     const link = item.link || '#';
+    const seed = seedNum(item.title || String(idx));
     return `
       <div class="news-card fade-in visible">
-        <div class="news-img" style="background:${bg};">
-          <i class="fas ${icon}" style="font-size:48px;color:rgba(255,255,255,0.15);"></i>
+        <div class="news-img" style="padding:0;background:#111;">
+          <img src="https://picsum.photos/seed/${seed}/600/240" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
           <span class="news-cat">${cat}</span>
         </div>
         <div class="news-body">

@@ -143,10 +143,11 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
   <div class="nav-inner">
     <div class="logo"><a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
     <ul class="nav-links">
-      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#savings">Account Opening</a><a href="products.html#savings">Savings Account</a><a href="products.html#lending">Loans</a><a href="products.html#cards">ATM Cards</a></div></li>
-      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#lending">Business Loans</a><a href="products.html#business">Corporate Accounts</a><a href="products.html#business">POS Terminal</a></div></li>
-      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#business">Corporate Banking</a><a href="products.html#insurance">Investments</a><a href="products.html#other">Proof of Funds</a></div></li>
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="account-opening.html">Account Opening</a><a href="savings.html">Savings Account</a><a href="fixed-deposit.html">Fixed Deposit</a><a href="loans.html">Loans</a><a href="atm-cards.html">ATM Cards</a><a href="mobile-banking.html">Mobile Banking</a></div></li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="business-loans.html">Business Loans</a><a href="corporate.html">Corporate Accounts</a><a href="pos-terminal.html">POS Terminal</a><a href="sme.html">SME Package</a><a href="sme.html#payroll">Payroll Payments</a></div></li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="corporate.html">Corporate Banking</a><a href="corporate.html#invest-acc">Investment Accounts</a><a href="corporate.html#proof-of-funds">Proof of Funds</a><a href="corporate.html#ngo">NGO Accounts</a></div></li>
       <li><a href="products.html">Services</a></li>
+      <li><a href="news.html" class="active">News</a></li>
       <li><a href="index.html#partners">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
@@ -245,12 +246,18 @@ function fmtDate(d){try{return new Date(d).toLocaleDateString('en-NG',{day:'nume
 function strip(h){const t=document.createElement('div');t.innerHTML=h||'';return(t.textContent||t.innerText||'').trim().slice(0,140)+'...';}
 function getCat(t){const s=(t||'').toLowerCase();if(s.includes('loan')||s.includes('credit'))return'Loans';if(s.includes('cbn')||s.includes('central bank'))return'Regulation';if(s.includes('stock')||s.includes('invest')||s.includes('market')||s.includes('ngx'))return'Markets';if(s.includes('naira')||s.includes('forex')||s.includes('dollar'))return'Currency';if(s.includes('bank')||s.includes('fintech'))return'Banking';return'Finance';}
 
+function seedNum(str){let h=0;for(let i=0;i<str.length;i++){h=(Math.imul(31,h)+str.charCodeAt(i))|0;}return Math.abs(h)%1000;}
+
 function makeCard(item,idx,delay){
-  const bg=BGS[idx%BGS.length];const icon=ICONS[idx%ICONS.length];const cat=getCat(item.title);
+  const cat=getCat(item.title);
   const desc=item.description?strip(item.description):'Read the full article for more details on this finance story.';
   const date=fmtDate(item.pubDate);const link=item.link||'#';
+  const seed=seedNum(item.title||String(idx));
   return`<div class="news-card" data-cat="${cat}" style="animation-delay:${delay}ms;">
-    <div class="news-img" style="background:${bg};"><i class="fas ${icon}"></i><span class="news-cat">${cat}</span></div>
+    <div class="news-img" style="padding:0;background:#111;">
+      <img src="https://picsum.photos/seed/${seed}/600/240" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <span class="news-cat">${cat}</span>
+    </div>
     <div class="news-body">
       ${date?`<div class="news-date"><i class="fas fa-calendar-alt" style="margin-right:6px;color:var(--primary);"></i>${date}</div>`:''}
       <h3>${item.title||'Finance Update'}</h3><p>${desc}</p>
@@ -259,9 +266,11 @@ function makeCard(item,idx,delay){
   </div>`;}
 
 function makeFeatured(item){
-  const cat=getCat(item.title);
+  const cat=getCat(item.title);const seed=seedNum(item.title||'featured');
   return`<div class="featured-card">
-    <div class="featured-img" style="background:linear-gradient(135deg,#1a0008 0%,#3d0015 100%);"><i class="fas fa-star" style="font-size:80px;color:rgba(255,255,255,0.1);"></i></div>
+    <div class="featured-img" style="padding:0;background:#111;">
+      <img src="https://picsum.photos/seed/${seed}/900/400" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
     <div class="featured-body">
       <div class="featured-tag"><i class="fas fa-fire"></i> Featured Story</div>
       <h2>${item.title}</h2>
