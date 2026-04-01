@@ -1066,7 +1066,11 @@
 
   @media (max-width: 768px) {
     section { padding: 56px 0; }
-    .hero { height: 480px; }
+    .hero { height: auto; min-height: 580px; }
+    .slide { align-items: flex-start; padding: 64px 0 80px; }
+    .slide-tag { margin-top: 8px; }
+    .slide-content p { font-size: 15px; margin-bottom: 28px; }
+    .carousel-nav { bottom: 20px; }
     .steps-grid { grid-template-columns: 1fr; gap: 32px; }
     .partners-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
