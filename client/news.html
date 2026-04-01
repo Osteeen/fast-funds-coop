@@ -280,7 +280,7 @@ function renderGrid(items){
 async function loadNews(){
   for(const feed of RSS_FEEDS){
     try{
-      const res=await fetch(`${RSS2JSON}${encodeURIComponent(feed)}&count=12`);
+      const res=await fetch(`${RSS2JSON}${encodeURIComponent(feed)}`);
       const data=await res.json();
       if(data.status==='ok'&&data.items&&data.items.length>0){
         allItems=data.items;
