@@ -720,9 +720,10 @@
   }
   .partner-card:hover::before { transform: scaleX(1); }
   /* PHOTO PLACEHOLDER — swap .partner-photo img src with real photo */
+  .partner-card h4 { margin-top: 16px; }
   .partner-photo {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin: 0 auto 20px;
     overflow: hidden;
@@ -1400,7 +1401,6 @@
   </div>
 </section>
 
-<!-- PARTNERS SECTION: Replace partner-photo placeholder divs with <img src="your-photo.jpg"> inside .partner-photo for each person -->
 <section class="partners-section" id="partners">
   <div class="container">
     <div class="fade-in">
@@ -1410,14 +1410,11 @@
     </div>
     <div class="partners-grid">
 
-      <!-- PARTNER 1: Replace photo placeholder with <img src="photo1.jpg" alt="Name"> -->
       <div class="partner-card fade-in">
         <div class="partner-photo">
-          <div class="photo-placeholder"><i class="fas fa-user"></i><span>Add Photo</span></div>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Partner">
         </div>
         <h4>Partner Name</h4>
-        <div class="partner-title">Managing Director</div>
-        <div class="partner-org">Organisation Name</div>
         <p class="partner-bio">A seasoned finance professional with over 20 years of experience in cooperative banking and SME development across Nigeria.</p>
         <div class="partner-socials">
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1425,14 +1422,11 @@
         </div>
       </div>
 
-      <!-- PARTNER 2: Replace photo placeholder with <img src="photo2.jpg" alt="Name"> -->
       <div class="partner-card fade-in">
         <div class="partner-photo">
-          <div class="photo-placeholder"><i class="fas fa-user"></i><span>Add Photo</span></div>
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Partner">
         </div>
         <h4>Partner Name</h4>
-        <div class="partner-title">Chief Executive Officer</div>
-        <div class="partner-org">Organisation Name</div>
         <p class="partner-bio">An accomplished leader driving financial inclusion and cooperative growth in underserved communities across West Africa.</p>
         <div class="partner-socials">
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1440,14 +1434,11 @@
         </div>
       </div>
 
-      <!-- PARTNER 3: Replace photo placeholder with <img src="photo3.jpg" alt="Name"> -->
       <div class="partner-card fade-in">
         <div class="partner-photo">
-          <div class="photo-placeholder"><i class="fas fa-user"></i><span>Add Photo</span></div>
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Partner">
         </div>
         <h4>Partner Name</h4>
-        <div class="partner-title">Director of Finance</div>
-        <div class="partner-org">Organisation Name</div>
         <p class="partner-bio">A strategic finance expert specialising in microfinance, loan portfolio management, and cooperative society governance.</p>
         <div class="partner-socials">
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1850,7 +1841,7 @@
     const badge = document.getElementById('news-source-badge');
     for (const feed of RSS_FEEDS) {
       try {
-        const res = await fetch(`${RSS2JSON}${encodeURIComponent(feed)}&count=3`);
+        const res = await fetch(`${RSS2JSON}${encodeURIComponent(feed)}`);
         const data = await res.json();
         if (data.status === 'ok' && data.items && data.items.length > 0) {
           grid.innerHTML = data.items.slice(0, 3).map((item, i) => buildNewsCard(item, i)).join('');
