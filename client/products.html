@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products & Services — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#D4001A;--primary-dark:#A80015;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+.top-bar{background:var(--dark);color:rgba(255,255,255,0.6);font-size:12px;padding:8px 0;}
+.top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar a{color:rgba(255,255,255,0.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+.top-bar a:hover{color:var(--white);}
+.top-bar .left{display:flex;gap:20px;align-items:center;}
+.top-bar .left span{display:flex;align-items:center;gap:6px;}
+.top-bar .left i{color:var(--primary);font-size:11px;}
+nav{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,0.12);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+.logo{flex-shrink:0;}
+.logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+.logo-text{line-height:1.1;}
+.logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+.logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+.nav-links li{position:relative;}
+.nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:var(--gray-1);color:var(--primary);}
+.nav-links a i{font-size:10px;opacity:0.6;}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+.nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+.dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-outline:hover{background:var(--primary);color:white;}
+.btn-primary{padding:9px 20px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+.mobile-menu{display:none;position:fixed;inset:0;background:white;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+.close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+.mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+.mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+.mobile-actions{display:flex;flex-direction:column;gap:12px;}
+.mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+/* PAGE HERO */
+.page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,0.15) 0%,transparent 70%);}
+.page-hero .container{position:relative;z-index:1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:white;}
+.breadcrumb i{font-size:10px;}
+.page-hero h1{font-size:clamp(32px,4vw,52px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:16px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.7;}
+/* CONTENT */
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+section{padding:72px 0;}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+.section-title{font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-0.5px;margin-bottom:12px;}
+.section-sub{font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+/* STICKY CATEGORY NAV */
+.cat-nav{background:white;border-bottom:1px solid var(--gray-2);position:sticky;top:var(--nav-height);z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.cat-nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none;gap:0;}
+.cat-nav-inner::-webkit-scrollbar{display:none;}
+.cat-link{display:flex;align-items:center;gap:8px;padding:16px 20px;font-size:13.5px;font-weight:500;color:var(--text-muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;}
+.cat-link i{font-size:14px;color:var(--primary);}
+.cat-link:hover,.cat-link.active{color:var(--primary);border-bottom-color:var(--primary);}
+/* PRODUCT CATEGORY SECTION */
+.product-section{padding:64px 0;border-bottom:1px solid var(--gray-2);}
+.product-section:last-child{border-bottom:none;}
+.product-section:nth-child(even){background:var(--gray-1);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.product-card{background:white;border:1px solid var(--gray-2);border-radius:14px;padding:28px 24px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden;}
+.product-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transition:transform .3s;}
+.product-card:hover{border-color:transparent;box-shadow:0 16px 48px rgba(0,0,0,0.1);transform:translateY(-4px);}
+.product-card:hover::before{transform:scaleX(1);}
+.product-icon{width:52px;height:52px;background:rgba(212,0,26,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all .2s;}
+.product-card:hover .product-icon{background:var(--primary);}
+.product-icon i{font-size:22px;color:var(--primary);transition:color .2s;}
+.product-card:hover .product-icon i{color:white;}
+.product-card h4{font-size:15.5px;font-weight:700;color:var(--dark);margin-bottom:8px;}
+.product-card p{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+.product-features{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.product-features li{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-muted);}
+.product-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;}
+.product-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;transition:gap .2s;}
+.product-cta:hover{gap:10px;}
+/* CTA BANNER */
+.cta-section{background:var(--primary);padding:72px 0;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.05);}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;z-index:1;}
+.cta-text h2{font-size:clamp(24px,3vw,38px);font-weight:800;color:white;letter-spacing:-0.5px;margin-bottom:8px;}
+.cta-text p{font-size:16px;color:rgba(255,255,255,0.75);}
+.cta-actions{display:flex;gap:14px;flex-shrink:0;}
+.btn-cta-white{padding:14px 32px;background:white;color:var(--primary);border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--dark);color:white;transform:translateY(-2px);}
+/* FOOTER */
+footer{background:var(--dark-2,#1A1A1A);color:rgba(255,255,255,0.6);padding:64px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand .logo-name{color:white;font-size:20px;margin-bottom:4px;display:block;}
+.footer-brand .logo-sub{margin-bottom:16px;display:block;}
+.footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.social-links{display:flex;gap:10px;}
+.social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,0.08);}
+.social-links a:hover{background:var(--primary);color:white;border-color:var(--primary);}
+.footer-col h5{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-size:13.5px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}
+.footer-col ul a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,0.3);gap:20px;flex-wrap:wrap;}
+.footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+.footer-bottom a:hover{color:white;}
+.footer-red-bar{height:4px;background:var(--primary);}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.cta-inner{flex-direction:column;text-align:center;}.cta-actions{justify-content:center;}}
+@media(max-width:768px){.page-hero{padding:48px 0;}.products-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d74737b725d7b7c6e697b6873796e33737a">[email&#160;protected]</a></span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="fastfunds.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text">
+          <span class="logo-name">Fastfunds</span>
+          <span class="logo-sub">Cooperative Society Limited</span>
+        </div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="products.html#savings">Account Opening</a>
+          <a href="products.html#savings">Savings Account</a>
+          <a href="products.html#savings">Fixed Deposit</a>
+          <a href="products.html#lending">Loans</a>
+          <a href="products.html#cards">ATM Cards</a>
+          <a href="products.html#digital">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="products.html#lending">Business Loans</a>
+          <a href="products.html#business">Corporate Accounts</a>
+          <a href="products.html#business">POS Terminal</a>
+          <a href="products.html#business">SME Package</a>
+          <a href="products.html#business">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="products.html#business">Corporate Banking</a>
+          <a href="products.html#insurance">Investment Accounts</a>
+          <a href="products.html#other">Proof of Funds</a>
+          <a href="products.html#business">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html" class="active">Services</a></li>
+      <li><a href="fastfunds.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="fastfunds.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="fastfunds.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Products & Services</span>
+    </div>
+    <h1>Our Products & Services</h1>
+    <p>From personal savings to corporate banking — everything you need to grow, protect, and manage your finances in one place.</p>
+  </div>
+</div>
+
+<!-- STICKY CATEGORY NAV -->
+<div class="cat-nav">
+  <div class="cat-nav-inner">
+    <a href="#savings" class="cat-link"><i class="fas fa-piggy-bank"></i> Savings & Deposits</a>
+    <a href="#lending" class="cat-link"><i class="fas fa-hand-holding-usd"></i> Credit & Lending</a>
+    <a href="#payments" class="cat-link"><i class="fas fa-exchange-alt"></i> Payments & Transfers</a>
+    <a href="#business" class="cat-link"><i class="fas fa-briefcase"></i> Business Banking</a>
+    <a href="#cards" class="cat-link"><i class="fas fa-credit-card"></i> Cards</a>
+    <a href="#digital" class="cat-link"><i class="fas fa-mobile-alt"></i> Digital Banking</a>
+    <a href="#insurance" class="cat-link"><i class="fas fa-shield-alt"></i> Insurance & Investments</a>
+    <a href="#other" class="cat-link"><i class="fas fa-th"></i> Other Services</a>
+  </div>
+</div>
+
+<!-- SAVINGS -->
+<section class="product-section" id="savings">
+  <div class="container">
+    <div class="section-label">Savings & Deposits</div>
+    <h2 class="section-title">Grow Your Money With Us</h2>
+    <p class="section-sub">Flexible savings and deposit products designed to help you reach your financial goals faster.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-university"></i></div>
+        <h4>Account Opening</h4>
+        <p>Open a personal account in minutes with minimal requirements and zero opening fees.</p>
+        <ul class="product-features">
+          <li>Valid ID + BVN required</li>
+          <li>Instant account number</li>
+          <li>Free first debit card</li>
+          <li>Online & in-branch opening</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-piggy-bank"></i></div>
+        <h4>Savings Account</h4>
+        <p>Earn competitive interest on your everyday savings with no monthly maintenance fees.</p>
+        <ul class="product-features">
+          <li>Up to 8% interest per annum</li>
+          <li>No minimum balance</li>
+          <li>Free mobile banking access</li>
+          <li>Instant deposits & withdrawals</li>
+        </ul>
+        <a href="savings.html" class="product-cta">Open Savings <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-lock"></i></div>
+        <h4>Fixed Deposit</h4>
+        <p>Lock your funds for a fixed period and earn higher guaranteed returns.</p>
+        <ul class="product-features">
+          <li>Tenors: 30, 60, 90, 180, 365 days</li>
+          <li>Up to 14% interest per annum</li>
+          <li>Auto-rollover option</li>
+          <li>Minimum: ₦50,000</li>
+        </ul>
+        <a href="investments.html" class="product-cta">Invest Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-bullseye"></i></div>
+        <h4>Target Savings</h4>
+        <p>Set a financial goal, define a timeline, and save automatically toward it.</p>
+        <ul class="product-features">
+          <li>Flexible contribution amounts</li>
+          <li>Goal-based tracking dashboard</li>
+          <li>Withdrawal restrictions (by design)</li>
+          <li>Bonus interest on completion</li>
+        </ul>
+        <a href="savings.html" class="product-cta">Set a Goal <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-child"></i></div>
+        <h4>Kids Savings Account</h4>
+        <p>Start your child's financial journey early with a dedicated savings account in their name.</p>
+        <ul class="product-features">
+          <li>Opened by parent/guardian</li>
+          <li>Educational savings milestones</li>
+          <li>Competitive interest rate</li>
+          <li>Converts to adult account at 18</li>
+        </ul>
+        <a href="savings.html" class="product-cta">Open for Child <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LENDING -->
+<section class="product-section" id="lending">
+  <div class="container">
+    <div class="section-label">Credit & Lending</div>
+    <h2 class="section-title">Fast Funding When You Need It</h2>
+    <p class="section-sub">Competitive loan products for individuals and businesses with flexible repayment terms.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <h4>Personal Loans</h4>
+        <p>Quick access to funds for personal needs — school fees, medical bills, home repairs and more.</p>
+        <ul class="product-features">
+          <li>Up to ₦5,000,000</li>
+          <li>Flexible 1–24 month tenor</li>
+          <li>Flat 5% monthly interest</li>
+          <li>Same-day disbursement</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-briefcase"></i></div>
+        <h4>Business Loans</h4>
+        <p>Capital injection to start, run, or expand your business with structured repayment plans.</p>
+        <ul class="product-features">
+          <li>Up to ₦20,000,000</li>
+          <li>1–36 month tenor</li>
+          <li>Business plan required</li>
+          <li>Collateral-based options</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-tools"></i></div>
+        <h4>Asset Finance</h4>
+        <p>Finance the purchase of equipment, machinery, or vehicles for your business operations.</p>
+        <ul class="product-features">
+          <li>Asset serves as collateral</li>
+          <li>Up to 60-month repayment</li>
+          <li>Competitive rates</li>
+          <li>New & used assets eligible</li>
+        </ul>
+        <a href="products.html" class="product-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-money-bill-wave"></i></div>
+        <h4>Salary Advance</h4>
+        <p>Access up to 50% of your monthly salary before payday — repaid automatically on salary date.</p>
+        <ul class="product-features">
+          <li>Up to 50% of net salary</li>
+          <li>30-day repayment</li>
+          <li>No collateral required</li>
+          <li>Salary domiciliation required</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-minus-circle"></i></div>
+        <h4>Overdraft Facility</h4>
+        <p>Keep transacting even when your account balance runs low with a pre-approved overdraft limit.</p>
+        <ul class="product-features">
+          <li>Based on account history</li>
+          <li>Interest on amount used only</li>
+          <li>Auto-replenishes on credit</li>
+          <li>Renewable annually</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-car"></i></div>
+        <h4>Car for Cash</h4>
+        <p>Use your vehicle as collateral and access instant liquidity without selling your car.</p>
+        <ul class="product-features">
+          <li>Car must be fully paid off</li>
+          <li>Up to 60% of car value</li>
+          <li>Keep using your vehicle</li>
+          <li>6–12 month tenor</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h4>Invoice Discounting</h4>
+        <p>Unlock cash tied up in unpaid invoices — get funded against receivables immediately.</p>
+        <ul class="product-features">
+          <li>Up to 80% of invoice value</li>
+          <li>For B2B businesses</li>
+          <li>Fast turnaround</li>
+          <li>Confidential facility available</li>
+        </ul>
+        <a href="products.html" class="product-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENTS -->
+<section class="product-section" id="payments">
+  <div class="container">
+    <div class="section-label">Payments & Transfers</div>
+    <h2 class="section-title">Move Money Seamlessly</h2>
+    <p class="section-sub">Fast, secure, and flexible payment solutions for individuals and businesses.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-receipt"></i></div>
+        <h4>Bill Payments</h4>
+        <p>Pay electricity, water, internet, DSTV, school fees, and more from one platform.</p>
+        <ul class="product-features">
+          <li>100+ billers supported</li>
+          <li>Instant confirmation</li>
+          <li>Schedule future payments</li>
+          <li>Available 24/7</li>
+        </ul>
+        <a href="internet-banking.html" class="product-cta">Pay Bills <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-users-cog"></i></div>
+        <h4>Bulk / Payroll Payments</h4>
+        <p>Pay your entire workforce in a single click with automated salary processing.</p>
+        <ul class="product-features">
+          <li>Upload Excel payroll file</li>
+          <li>Multi-bank disbursement</li>
+          <li>Payslip generation</li>
+          <li>Approval workflow</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-globe"></i></div>
+        <h4>International Transfers</h4>
+        <p>Send and receive money across borders with competitive exchange rates and fast processing.</p>
+        <ul class="product-features">
+          <li>50+ countries supported</li>
+          <li>Competitive FX rates</li>
+          <li>SWIFT & local rails</li>
+          <li>1–3 business day delivery</li>
+        </ul>
+        <a href="internet-banking.html" class="product-cta">Transfer Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-redo"></i></div>
+        <h4>Standing Orders</h4>
+        <p>Automate recurring payments — rent, subscriptions, savings contributions — on a fixed schedule.</p>
+        <ul class="product-features">
+          <li>Daily, weekly, monthly</li>
+          <li>Set & forget</li>
+          <li>Pause or cancel anytime</li>
+          <li>Email confirmation each run</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Set Up <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section class="product-section" id="business">
+  <div class="container">
+    <div class="section-label">Business Banking</div>
+    <h2 class="section-title">Built for Nigerian Businesses</h2>
+    <p class="section-sub">Dedicated banking solutions for SMEs, corporates, NGOs, and cooperative societies.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-building"></i></div>
+        <h4>Corporate Accounts</h4>
+        <p>Full-featured accounts for registered businesses with multiple signatories and high transaction limits.</p>
+        <ul class="product-features">
+          <li>CAC documents required</li>
+          <li>Multiple signatories</li>
+          <li>Bulk payment access</li>
+          <li>Dedicated relationship manager</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Open Account <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-balance-scale"></i></div>
+        <h4>Current Account</h4>
+        <p>A flexible, everyday transactional account ideal for active business operations.</p>
+        <ul class="product-features">
+          <li>Unlimited transactions</li>
+          <li>Cheque book available</li>
+          <li>Overdraft eligible</li>
+          <li>Internet banking included</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Open Account <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-store"></i></div>
+        <h4>SME Banking Package</h4>
+        <p>A complete banking bundle tailored for small and medium-sized businesses in Nigeria.</p>
+        <ul class="product-features">
+          <li>Business account + POS</li>
+          <li>SME loan access</li>
+          <li>Free payroll setup</li>
+          <li>Business advisory support</li>
+        </ul>
+        <a href="sme.html" class="product-cta">Get Package <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-hands-helping"></i></div>
+        <h4>Cooperative / Group Account</h4>
+        <p>Dedicated banking for cooperatives, associations, and group savings schemes (ajo/esusu).</p>
+        <ul class="product-features">
+          <li>Group contribution tracking</li>
+          <li>Rotation payout management</li>
+          <li>Group loan eligibility</li>
+          <li>Transparent transaction history</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Open Account <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-heart"></i></div>
+        <h4>NGO / Non-Profit Account</h4>
+        <p>Simplified banking designed for registered non-profits, NGOs, and faith-based organisations.</p>
+        <ul class="product-features">
+          <li>Donor receipt management</li>
+          <li>Multi-signatory setup</li>
+          <li>Grant disbursement support</li>
+          <li>Reduced fees for NGOs</li>
+        </ul>
+        <a href="account-opening.html" class="product-cta">Open Account <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-cash-register"></i></div>
+        <h4>POS Terminal</h4>
+        <p>Accept card and contactless payments at your business location with our smart POS devices.</p>
+        <ul class="product-features">
+          <li>Next-day settlement</li>
+          <li>Supports all card types</li>
+          <li>Real-time transaction alerts</li>
+          <li>Low transaction fees</li>
+        </ul>
+        <a href="pos-terminal.html" class="product-cta">Get POS <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="product-section" id="cards">
+  <div class="container">
+    <div class="section-label">Cards</div>
+    <h2 class="section-title">A Card for Every Need</h2>
+    <p class="section-sub">Physical and virtual cards that give you full control over how you spend and manage money.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-credit-card"></i></div>
+        <h4>ATM / Debit Card</h4>
+        <p>Instant debit cards for seamless everyday spending at ATMs, POS terminals, and online.</p>
+        <ul class="product-features">
+          <li>Visa / Verve options</li>
+          <li>Free first issuance</li>
+          <li>Transaction alerts via SMS</li>
+          <li>Contactless payments</li>
+        </ul>
+        <a href="atm-cards.html" class="product-cta">Request Card <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-id-card"></i></div>
+        <h4>Credit Card</h4>
+        <p>Spend now and pay later with a flexible credit limit based on your account standing.</p>
+        <ul class="product-features">
+          <li>Up to ₦500,000 limit</li>
+          <li>30-day interest-free period</li>
+          <li>Rewards on spending</li>
+          <li>Worldwide acceptance</li>
+        </ul>
+        <a href="loans.html" class="product-cta">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-wallet"></i></div>
+        <h4>Prepaid Card</h4>
+        <p>Load a fixed amount and spend with full budget control — great for travel and allowances.</p>
+        <ul class="product-features">
+          <li>Load up to ₦200,000</li>
+          <li>No account linkage needed</li>
+          <li>Reloadable</li>
+          <li>Online & POS payments</li>
+        </ul>
+        <a href="atm-cards.html" class="product-cta">Get Card <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Virtual Card</h4>
+        <p>A secure digital card number for safe online transactions — no physical card needed.</p>
+        <ul class="product-features">
+          <li>Instant generation in app</li>
+          <li>One-time or recurring use</li>
+          <li>Freeze / unfreeze instantly</li>
+          <li>USD & NGN options</li>
+        </ul>
+        <a href="atm-cards.html" class="product-cta">Generate Card <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL -->
+<section class="product-section" id="digital">
+  <div class="container">
+    <div class="section-label">Digital Banking</div>
+    <h2 class="section-title">Bank Anywhere, Anytime</h2>
+    <p class="section-sub">Modern digital channels that put your full banking experience right in your pocket.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h4>Mobile Banking App</h4>
+        <p>Our full-featured app lets you transfer money, pay bills, apply for loans, and more on the go.</p>
+        <ul class="product-features">
+          <li>iOS & Android</li>
+          <li>Biometric login</li>
+          <li>Real-time notifications</li>
+          <li>QR code payments</li>
+        </ul>
+        <a href="mobile-banking.html" class="product-cta">Download App <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-laptop"></i></div>
+        <h4>Internet Banking</h4>
+        <p>Access your full account, transfer funds, manage beneficiaries, and view statements online.</p>
+        <ul class="product-features">
+          <li>Secure OTP authentication</li>
+          <li>Up to ₦50M transfer limit</li>
+          <li>Statement download (PDF/CSV)</li>
+          <li>Bulk payment upload</li>
+        </ul>
+        <a href="internet-banking.html" class="product-cta">Login Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-hashtag"></i></div>
+        <h4>USSD Banking</h4>
+        <p>Perform key banking transactions using any phone — no smartphone or internet required.</p>
+        <ul class="product-features">
+          <li>Dial *000# to start</li>
+          <li>Transfer, airtime, balance</li>
+          <li>Works on all networks</li>
+          <li>No data required</li>
+        </ul>
+        <a href="contact.html" class="product-cta">Dial Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-network-wired"></i></div>
+        <h4>Agency Banking</h4>
+        <p>Access Fastfunds services through our growing network of agents across Nigeria.</p>
+        <ul class="product-features">
+          <li>Cash deposit & withdrawal</li>
+          <li>Account opening via agent</li>
+          <li>Bill payments</li>
+          <li>Available in rural areas</li>
+        </ul>
+        <a href="contact.html" class="product-cta">Find Agent <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE -->
+<section class="product-section" id="insurance">
+  <div class="container">
+    <div class="section-label">Insurance & Investments</div>
+    <h2 class="section-title">Protect & Grow Your Wealth</h2>
+    <p class="section-sub">Financial protection and investment products to secure your future.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-umbrella"></i></div>
+        <h4>Micro Insurance</h4>
+        <p>Affordable protection for life, health, and assets — tailored for everyday Nigerians.</p>
+        <ul class="product-features">
+          <li>From ₦500/month premium</li>
+          <li>Life, health, device cover</li>
+          <li>Fast claims processing</li>
+          <li>No medical exam required</li>
+        </ul>
+        <a href="contact.html" class="product-cta">Get Covered <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Investment Account</h4>
+        <p>Put your idle funds to work with our managed investment account and earn above-inflation returns.</p>
+        <ul class="product-features">
+          <li>Minimum: ₦100,000</li>
+          <li>Up to 18% per annum</li>
+          <li>Quarterly interest payout</li>
+          <li>Capital protection option</li>
+        </ul>
+        <a href="investments.html" class="product-cta">Invest Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-coins"></i></div>
+        <h4>Money Market Account</h4>
+        <p>High-yield short-term account for businesses and individuals with surplus funds.</p>
+        <ul class="product-features">
+          <li>Minimum: ₦500,000</li>
+          <li>Daily interest accrual</li>
+          <li>30-day liquidity</li>
+          <li>CBN-regulated product</li>
+        </ul>
+        <a href="products.html" class="product-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER -->
+<section class="product-section" id="other">
+  <div class="container">
+    <div class="section-label">Other Services</div>
+    <h2 class="section-title">More Ways We Serve You</h2>
+    <p class="section-sub">Additional services to support your financial and transactional needs.</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><i class="fas fa-file-alt"></i></div>
+        <h4>Proof of Funds</h4>
+        <p>Get an officially certified proof of funds letter for visa applications, property transactions, or business deals.</p>
+        <ul class="product-features">
+          <li>Same-day issuance</li>
+          <li>Stamped & signed letter</li>
+          <li>Accepted internationally</li>
+          <li>Digital & hard copy</li>
+        </ul>
+        <a href="contact.html" class="product-cta">Request Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to Get Started?</h2>
+        <p>Open an account today and access all our products in one place.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="account-opening.html" class="btn-cta-white"><i class="fas fa-user-plus"></i> Open Your Account</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="fastfunds.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html#lending">Personal Loans</a></li><li><a href="products.html#lending">Business Loans</a></li><li><a href="products.html#savings">Savings Account</a></li><li><a href="products.html#savings">Fixed Deposits</a></li><li><a href="products.html#cards">ATM Cards</a></li><li><a href="products.html#business">POS Terminal</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="help.html">Help Center</a></li><li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html#terms">Terms of Use</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+// Highlight active category in sticky nav
+const catLinks=document.querySelectorAll('.cat-link');
+const sections=document.querySelectorAll('.product-section');
+window.addEventLi

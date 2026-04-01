@@ -5,10 +5,11 @@ const resendClient = new Resend(process.env.RESEND_API_KEY);
 // Shared helpers
 // ---------------------------------------------------------------------------
 
-const FROM_ADDRESS = `"Kufre Loans" <${process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@kufre.com'}>`;
-const BRAND_COLOR = '#1B4332';
-const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL || 'support@kufre.com';
-const CLIENT_URL = process.env.CLIENT_URL || 'https://app.kufre.com';
+const FROM_ADDRESS = `"Fastfunds Cooperative Society" <${process.env.EMAIL_FROM || 'no-reply@fastfunds.com'}>`;
+const BRAND_COLOR = '#D4001A';
+const GOLD_COLOR = '#C8992A';
+const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL || 'support@fastfunds.com';
+const CLIENT_URL = process.env.CLIENT_URL || 'https://fastfunds.com';
 
 /**
  * Format a kobo amount as a Nigerian Naira string.
@@ -32,16 +33,17 @@ function buildEmailHtml(title, bodyHtml) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
   <style>
-    body { margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; }
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap');
+    body { margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1A1A1A; }
     .wrapper { width: 100%; background-color: #f4f4f4; padding: 30px 0; }
     .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .header { background-color: ${BRAND_COLOR}; padding: 28px 32px; text-align: center; }
     .header h1 { color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px; }
-    .header p { color: #a8d5b5; margin: 4px 0 0; font-size: 13px; }
+    .header p { color: rgba(255,255,255,0.75); margin: 4px 0 0; font-size: 13px; }
     .body { padding: 32px; }
     .body h2 { color: ${BRAND_COLOR}; margin-top: 0; font-size: 20px; }
     .body p { line-height: 1.7; margin: 0 0 16px; }
-    .info-box { background-color: #f0f7f4; border-left: 4px solid ${BRAND_COLOR}; border-radius: 4px; padding: 16px 20px; margin: 20px 0; }
+    .info-box { background-color: #FFF5F5; border-left: 4px solid ${BRAND_COLOR}; border-radius: 4px; padding: 16px 20px; margin: 20px 0; }
     .info-box p { margin: 4px 0; font-size: 14px; }
     .info-box strong { color: ${BRAND_COLOR}; }
     .btn { display: inline-block; background-color: ${BRAND_COLOR}; color: #ffffff !important; text-decoration: none; padding: 12px 28px; border-radius: 6px; font-weight: bold; font-size: 15px; margin: 8px 0; }
@@ -58,16 +60,16 @@ function buildEmailHtml(title, bodyHtml) {
   <div class="wrapper">
     <div class="container">
       <div class="header">
-        <h1>Kufre Loans</h1>
-        <p>Smart Lending, Trusted Finance</p>
+        <h1>Fastfunds Cooperative Society</h1>
+        <p>Empowering Members, Building Futures</p>
       </div>
       <div class="body">
         ${bodyHtml}
       </div>
       <div class="footer">
-        <p>You received this email because you have an account with Kufre Loans.</p>
+        <p>You received this email because you have an account with Fastfunds Cooperative Society.</p>
         <p>Need help? <a href="mailto:${SUPPORT_EMAIL}">${SUPPORT_EMAIL}</a></p>
-        <p>&copy; ${new Date().getFullYear()} Kufre Finance. All rights reserved.</p>
+        <p>&copy; ${new Date().getFullYear()} Fastfunds Cooperative Society Limited. All rights reserved.</p>
       </div>
     </div>
   </div>
@@ -107,12 +109,12 @@ const emailService = {
    * Welcome email after successful registration.
    */
   async sendWelcome(user, accountNumber) {
-    const subject = 'Welcome to Kufre Loans!';
+    const subject = 'Welcome to Fastfunds Cooperative Society!';
     const html = buildEmailHtml(
       subject,
       `
       <h2>Welcome, ${user.first_name}! 🎉</h2>
-      <p>Your account has been successfully created. You are now part of the Kufre Loans family — where smart lending meets trusted finance.</p>
+      <p>Your account has been successfully created. You are now part of the Fastfunds Cooperative Society family — where smart lending meets trusted finance.</p>
       <div class="info-box">
         <p><strong>Your Virtual Account Details</strong></p>
         <p>Account Number: <strong>${accountNumber}</strong></p>
@@ -138,7 +140,7 @@ const emailService = {
       subject,
       `
       <h2>We've received your application!</h2>
-      <p>Hi ${user.first_name}, thank you for applying with Kufre Loans. Your application is currently under review.</p>
+      <p>Hi ${user.first_name}, thank you for applying with Fastfunds Cooperative Society. Your application is currently under review.</p>
       <div class="info-box">
         <p><strong>Application Reference:</strong> #${loanId}</p>
         <p><strong>Status:</strong> <span class="status-badge status-warning">Under Review</span></p>
@@ -285,7 +287,7 @@ const emailService = {
       subject,
       `
       <h2>You have a new message</h2>
-      <p>Hi ${user.first_name}, the Kufre Loans team has sent you a message regarding your Loan #${loan.id}.</p>
+      <p>Hi ${user.first_name}, the Fastfunds Cooperative Society team has sent you a message regarding your Loan #${loan.id}.</p>
       <p>Log in to your portal to read and respond to the message.</p>
       <a href="${CLIENT_URL}/dashboard/loans/${loan.id}?tab=messages" class="btn">View Message</a>
       `
@@ -297,12 +299,12 @@ const emailService = {
    * Welcome email for new team members added by super admin.
    */
   async sendTeamMemberWelcome(user, role, password) {
-    const subject = 'Welcome to the Kufre Loans Team';
+    const subject = 'Welcome to the Fastfunds Cooperative Society Team';
     const html = buildEmailHtml(
       subject,
       `
       <h2>Welcome to the Team, ${user.first_name}!</h2>
-      <p>Your Kufre Loans admin account has been created. Here are your login details:</p>
+      <p>Your Fastfunds Cooperative Society admin account has been created. Here are your login details:</p>
       <div class="info-box">
         <p><strong>Email:</strong> ${user.email}</p>
         <p><strong>Password:</strong> ${password}</p>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+  .top-bar{background:var(--dark);color:rgba(255,255,255,.6);font-size:12px;padding:8px 0;}
+  .top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .top-bar a:hover{color:#fff;}
+  .top-bar .left{display:flex;gap:20px;align-items:center;}
+  .top-bar .left span{display:flex;align-items:center;gap:6px;}
+  .top-bar .left i{color:var(--primary);font-size:11px;}
+  nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+  nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.12);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+  .logo{flex-shrink:0;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+  .logo-text{line-height:1.1;}
+  .logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+  .logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;display:block;}
+  .nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+  .nav-links li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-links a i{font-size:10px;opacity:.6;}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+  .nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+  .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+  .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+  .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+  .mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+  .mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .mobile-actions{display:flex;flex-direction:column;gap:12px;}
+  .mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+  .section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+  .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+  .page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.15) 0%,transparent 70%);}
+  .page-hero .container{position:relative;z-index:1;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px;}
+  .breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb i{font-size:10px;}
+  .page-hero h1{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.7;}
+  .page-hero .hero-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;}
+  .hero-tag i{color:var(--primary);font-size:11px;}
+  footer{background:var(--dark-2);color:rgba(255,255,255,.6);padding:64px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.45);margin:16px 0 20px;}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.08);}
+  .social-links a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .footer-col h5{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,.3);gap:20px;flex-wrap:wrap;}
+  .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-red-bar{height:4px;background:var(--primary);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+
+  .jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;}
+  .job-card{background:#fff;border:1px solid var(--gray-2);border-radius:12px;padding:28px;transition:all .25s;position:relative;overflow:hidden;}
+  .job-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transition:transform .3s;}
+  .job-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px);}
+  .job-card:hover::before{transform:scaleX(1);}
+  .job-dept{display:inline-flex;align-items:center;gap:6px;background:rgba(212,0,26,.06);color:var(--primary);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px;}
+  .job-card h3{font-size:17px;font-weight:700;margin-bottom:8px;}
+  .job-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+  .job-meta span{font-size:12.5px;color:var(--text-muted);display:flex;align-items:center;gap:5px;}
+  .job-meta i{color:var(--primary);}
+  .job-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;}
+  .btn-apply{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--primary);color:#fff;border-radius:6px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .2s;}
+  .btn-apply:hover{background:var(--primary-dark);transform:translateY(-1px);}
+  .perks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .perk-card{text-align:center;padding:32px 20px;background:var(--gray-1);border-radius:12px;border:1px solid var(--gray-2);}
+  .perk-icon{width:56px;height:56px;background:rgba(212,0,26,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .perk-icon i{font-size:22px;color:var(--primary);}
+  .perk-card h4{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .perk-card p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+  .cta-section{background:var(--primary);padding:72px 0;text-align:center;position:relative;overflow:hidden;}
+  .cta-section::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.05);}
+  .cta-section h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:#fff;margin-bottom:12px;position:relative;}
+  .cta-section p{font-size:16px;color:rgba(255,255,255,.75);margin-bottom:32px;position:relative;}
+  .cta-section .btn-cta-white{padding:14px 36px;background:#fff;color:var(--primary);border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;position:relative;}
+  .cta-section .btn-cta-white:hover{background:var(--dark);color:#fff;transform:translateY(-2px);}
+  .no-jobs{text-align:center;padding:64px 24px;color:var(--text-muted);}
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  .filter-btn{padding:8px 18px;border:1.5px solid var(--gray-3);border-radius:100px;background:#fff;color:var(--text-muted);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+  .filter-btn:hover,.filter-btn.active{border-color:var(--primary);color:var(--primary);background:rgba(212,0,26,.04);}
+  @media(max-width:1024px){.perks-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:768px){.perks-grid{grid-template-columns:1fr;}.jobs-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> info@fastfunds.coop</span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="account-opening.html">Account Opening</a>
+          <a href="savings.html">Savings Account</a>
+          <a href="fixed-deposit.html">Fixed Deposit</a>
+          <a href="loans.html">Loans</a>
+          <a href="atm-cards.html">ATM Cards</a>
+          <a href="mobile-banking.html">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="business-loans.html">Business Loans</a>
+          <a href="corporate.html">Corporate Accounts</a>
+          <a href="pos-terminal.html">POS Terminal</a>
+          <a href="sme.html">SME Package</a>
+          <a href="sme.html#payroll">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="corporate.html">Corporate Banking</a>
+          <a href="investments.html">Investment Accounts</a>
+          <a href="corporate.html#proof-of-funds">Proof of Funds</a>
+          <a href="corporate.html#ngo">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="about.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Careers</span></div>
+    <h1>Build a Career That Matters</h1>
+    <p>Join a team dedicated to transforming financial lives across Nigeria. At Fastfunds, your work directly empowers thousands of members to save, grow, and thrive.</p>
+    <div class="hero-tags">
+      <span class="hero-tag"><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</span>
+      <span class="hero-tag"><i class="fas fa-users"></i> 50+ Team Members</span>
+      <span class="hero-tag"><i class="fas fa-award"></i> Great Place to Work</span>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="section-label">Why Fastfunds</div>
+    <h2 class="section-title">Perks & Benefits</h2>
+    <p class="section-sub">We invest in our people because our people invest in our members.</p>
+    <div class="perks-grid">
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Competitive Pay</h4><p>Market-rate salaries reviewed annually, plus performance bonuses tied to results.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-heartbeat"></i></div><h4>Health Insurance</h4><p>Comprehensive HMO coverage for you and your immediate family from day one.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-graduation-cap"></i></div><h4>Learning & Growth</h4><p>Annual training budget, certifications support, and internal career progression pathways.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-laptop-house"></i></div><h4>Hybrid Work</h4><p>Flexible hybrid arrangements for eligible roles. We trust you to deliver results.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-piggy-bank"></i></div><h4>Cooperative Benefits</h4><p>Priority access to Fastfunds member benefits including preferential loan rates.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-calendar-check"></i></div><h4>Generous Leave</h4><p>25 days annual leave, maternity/paternity leave, and compassionate leave provisions.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-trophy"></i></div><h4>Recognition</h4><p>Quarterly star employee recognition, long-service awards, and team celebrations.</p></div>
+      <div class="perk-card fade-in"><div class="perk-icon"><i class="fas fa-shield-alt"></i></div><h4>Pension</h4><p>Contributory pension scheme fully compliant with the Pension Reform Act.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Open Positions</div>
+    <h2 class="section-title">Current Openings</h2>
+    <p class="section-sub">We're growing and looking for exceptional people to join our team.</p>
+    <div class="filter-row">
+      <button class="filter-btn active" data-dept="all">All Departments</button>
+      <button class="filter-btn" data-dept="tech">Technology</button>
+      <button class="filter-btn" data-dept="finance">Finance</button>
+      <button class="filter-btn" data-dept="ops">Operations</button>
+      <button class="filter-btn" data-dept="sales">Sales & Marketing</button>
+      <button class="filter-btn" data-dept="cs">Customer Service</button>
+    </div>
+    <div class="jobs-grid" id="jobsGrid">
+      <div class="job-card fade-in" data-dept="tech">
+        <span class="job-dept"><i class="fas fa-code"></i> Technology</span>
+        <h3>Full-Stack Developer (Node.js / React)</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (Hybrid)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 3 days ago</span>
+        </div>
+        <p>Build and maintain our digital banking platform. You'll work on our member portal, loan management system, and mobile app using React, Node.js, and PostgreSQL.</p>
+        <a href="contact.html?subject=Application: Full-Stack Developer" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="tech">
+        <span class="job-dept"><i class="fas fa-code"></i> Technology</span>
+        <h3>IT Support & Systems Administrator</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+        </div>
+        <p>Manage day-to-day IT operations, network infrastructure, and provide technical support across the organisation. Experience with core banking systems is an advantage.</p>
+        <a href="contact.html?subject=Application: IT Support Administrator" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="finance">
+        <span class="job-dept"><i class="fas fa-chart-line"></i> Finance</span>
+        <h3>Credit Analyst</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 5 days ago</span>
+        </div>
+        <p>Evaluate loan applications, assess member creditworthiness, analyse financial statements, and make lending recommendations in line with our credit policy.</p>
+        <a href="contact.html?subject=Application: Credit Analyst" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="finance">
+        <span class="job-dept"><i class="fas fa-chart-line"></i> Finance</span>
+        <h3>Accountant / Finance Officer</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 2 weeks ago</span>
+        </div>
+        <p>Manage daily financial operations, prepare management accounts, handle statutory returns, and ensure compliance with cooperative financial regulations.</p>
+        <a href="contact.html?subject=Application: Finance Officer" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="ops">
+        <span class="job-dept"><i class="fas fa-cogs"></i> Operations</span>
+        <h3>Loan Operations Officer</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+        </div>
+        <p>Process loan disbursements, manage repayment schedules, coordinate with members on restructuring requests, and maintain loan portfolio records.</p>
+        <a href="contact.html?subject=Application: Loan Operations Officer" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="sales">
+        <span class="job-dept"><i class="fas fa-bullhorn"></i> Sales & Marketing</span>
+        <h3>Business Development Officer</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (Field/Hybrid)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 3 days ago</span>
+        </div>
+        <p>Drive member acquisition campaigns, build partnerships with employers and associations, and grow our membership base across target communities in Lagos.</p>
+        <a href="contact.html?subject=Application: Business Development Officer" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="cs">
+        <span class="job-dept"><i class="fas fa-headset"></i> Customer Service</span>
+        <h3>Member Services Representative</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 4 days ago</span>
+        </div>
+        <p>Handle member enquiries, resolve account issues, process member requests, and ensure a consistently excellent service experience across all touchpoints.</p>
+        <a href="contact.html?subject=Application: Member Services Representative" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+      <div class="job-card fade-in" data-dept="ops">
+        <span class="job-dept"><i class="fas fa-cogs"></i> Operations</span>
+        <h3>Compliance & Risk Officer</h3>
+        <div class="job-meta">
+          <span><i class="fas fa-map-marker-alt"></i> Lagos (On-site)</span>
+          <span><i class="fas fa-briefcase"></i> Full-time</span>
+          <span><i class="fas fa-clock"></i> Posted 6 days ago</span>
+        </div>
+        <p>Monitor regulatory compliance, conduct AML/KYC reviews, prepare regulatory reports for CBN/SCUML, and develop risk management frameworks for the cooperative.</p>
+        <a href="contact.html?subject=Application: Compliance & Risk Officer" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Don't See Your Role?</h2>
+    <p>We're always interested in meeting talented people. Send us your CV and we'll be in touch when the right opportunity arises.</p>
+    <a href="contact.html?subject=Speculative Application" class="btn-cta-white"><i class="fas fa-envelope"></i> Send Speculative Application</a>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const dept=btn.dataset.dept;
+      document.querySelectorAll('.job-card').forEach(card=>{
+        card.style.display=(dept==='all'||card.dataset.dept===dept)?'':'none';
+      });
+    });
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul>
+        <li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li>
+        <li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li>
+        <li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li>
+        <li><a href="investments.html">Investments</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li>
+        <li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li>
+        <li><a href="about.html#partners">Partners</a></li><li><a href="csr.html">CSR</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Support</h5><ul>
+        <li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

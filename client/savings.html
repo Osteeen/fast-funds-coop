@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savings Account — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+  .top-bar{background:var(--dark);color:rgba(255,255,255,.6);font-size:12px;padding:8px 0;}
+  .top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .top-bar a:hover{color:#fff;}
+  .top-bar .left{display:flex;gap:20px;align-items:center;}
+  .top-bar .left span{display:flex;align-items:center;gap:6px;}
+  .top-bar .left i{color:var(--primary);font-size:11px;}
+  nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+  nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.12);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+  .logo{flex-shrink:0;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+  .logo-text{line-height:1.1;}
+  .logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+  .logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;display:block;}
+  .nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+  .nav-links li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-links a i{font-size:10px;opacity:.6;}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+  .nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+  .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+  .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+  .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+  .mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+  .mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .mobile-actions{display:flex;flex-direction:column;gap:12px;}
+  .mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+  .section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+  .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+  .page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.15) 0%,transparent 70%);}
+  .page-hero .container{position:relative;z-index:1;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px;}
+  .breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb i{font-size:10px;}
+  .page-hero h1{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.7;}
+  .page-hero .hero-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;}
+  .hero-tag i{color:var(--primary);font-size:11px;}
+  footer{background:var(--dark-2);color:rgba(255,255,255,.6);padding:64px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.45);margin:16px 0 20px;}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.08);}
+  .social-links a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .footer-col h5{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,.3);gap:20px;flex-wrap:wrap;}
+  .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-red-bar{height:4px;background:var(--primary);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+
+  .product-hero{background:var(--dark);padding:72px 0;position:relative;overflow:hidden;}
+  .product-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.12) 0%,transparent 70%);}
+  .product-hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;}
+  .product-hero-icon{width:64px;height:64px;background:rgba(212,0,26,.15);border:1px solid rgba(212,0,26,.3);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .product-hero-icon i{font-size:28px;color:var(--primary);}
+  .product-hero h1{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:16px;line-height:1.1;}
+  .product-hero p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:28px;max-width:520px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-hero-red{padding:14px 32px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;}
+  .btn-hero-red:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,0,26,.4);}
+  .btn-hero-ghost{padding:14px 32px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+  .btn-hero-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+  .product-card-hero{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;}
+  .product-card-hero h4{font-size:13px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .highlight-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+  .highlight-row:last-child{border-bottom:none;}
+  .highlight-row span:first-child{font-size:13px;color:rgba(255,255,255,.45);}
+  .highlight-row span:last-child{font-size:14px;font-weight:700;color:#fff;}
+  .highlight-row .val-red{color:var(--primary);}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .feature-card{padding:28px 24px;background:#fff;border:1px solid var(--gray-2);border-radius:12px;transition:all .25s;}
+  .feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px);border-color:transparent;}
+  .feature-icon{width:48px;height:48px;background:rgba(212,0,26,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .feature-icon i{font-size:20px;color:var(--primary);}
+  .feature-card h3{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .feature-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+  .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .req-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .req-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text);line-height:1.6;}
+  .req-list li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--primary);font-size:12px;margin-top:3px;flex-shrink:0;}
+  .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .steps-row::before{content:'';position:absolute;top:28px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:2px;background:repeating-linear-gradient(90deg,var(--primary) 0,var(--primary) 8px,transparent 8px,transparent 16px);}
+  .step-box{text-align:center;padding:0 16px;position:relative;z-index:1;}
+  .step-circle{width:56px;height:56px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:20px;font-weight:800;margin:0 auto 16px;box-shadow:0 6px 20px rgba(212,0,26,.3);}
+  .step-box h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+  .step-box p{font-size:12.5px;color:var(--text-muted);line-height:1.5;}
+  .cta-bar{background:var(--primary);border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .cta-bar h3{font-size:22px;font-weight:800;color:#fff;margin-bottom:6px;}
+  .cta-bar p{font-size:14px;color:rgba(255,255,255,.7);}
+  .cta-bar-actions{display:flex;gap:12px;flex-shrink:0;}
+  .btn-cta-w{padding:12px 28px;background:#fff;color:var(--primary);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-cta-w:hover{background:var(--dark);color:#fff;}
+  .btn-cta-o{padding:12px 28px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-cta-o:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+  .faq-list{display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:#fff;border:1px solid var(--gray-2);border-radius:10px;overflow:hidden;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-size:14.5px;font-weight:600;transition:color .2s;}
+  .faq-q:hover{color:var(--primary);}
+  .faq-q i{font-size:13px;color:var(--text-muted);transition:transform .3s;}
+  .faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
+  .faq-a.open{max-height:300px;padding:0 20px 18px;}
+  .faq-a p{font-size:13.5px;color:var(--text-muted);line-height:1.7;}
+  .faq-item.open .faq-q i{transform:rotate(180deg);color:var(--primary);}
+  @media(max-width:1024px){.product-hero .container{grid-template-columns:1fr;}.product-card-hero{display:none;}.features-grid{grid-template-columns:repeat(2,1fr);}.steps-row{grid-template-columns:repeat(2,1fr)}.steps-row::before{display:none;}.req-grid{grid-template-columns:1fr;}}
+  @media(max-width:768px){.features-grid{grid-template-columns:1fr;}.cta-bar{flex-direction:column;text-align:center;}.cta-bar-actions{justify-content:center;flex-wrap:wrap;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> info@fastfunds.coop</span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="account-opening.html">Account Opening</a>
+          <a href="savings.html">Savings Account</a>
+          <a href="fixed-deposit.html">Fixed Deposit</a>
+          <a href="loans.html">Loans</a>
+          <a href="atm-cards.html">ATM Cards</a>
+          <a href="mobile-banking.html">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="business-loans.html">Business Loans</a>
+          <a href="corporate.html">Corporate Accounts</a>
+          <a href="pos-terminal.html">POS Terminal</a>
+          <a href="sme.html">SME Package</a>
+          <a href="sme.html#payroll">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="corporate.html">Corporate Banking</a>
+          <a href="investments.html">Investment Accounts</a>
+          <a href="corporate.html#proof-of-funds">Proof of Funds</a>
+          <a href="corporate.html#ngo">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="about.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="product-hero">
+  <div class="container">
+    <div>
+      <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="products.html">Products</a><i class="fas fa-chevron-right"></i><span>Savings Account</span></div>
+      <div class="product-hero-icon"><i class="fas fa-piggy-bank"></i></div>
+      <h1>Save More. Earn More. Grow Faster.</h1>
+      <p>Your Fastfunds savings account is more than a place to keep money — it's the foundation of your financial future. Earn competitive interest, access funds when you need them, and build the credit history that unlocks higher loan limits.</p>
+      <div class="hero-actions">
+        <a href="account-opening.html" class="btn-hero-red"><i class="fas fa-user-plus"></i> Get Started</a>
+        <a href="contact.html" class="btn-hero-ghost">Talk to Us</a>
+      </div>
+    </div>
+    <div class="product-card-hero">
+      <h4>At a Glance</h4>
+      <div class="highlight-row"><span>Interest Rate</span><span class="val-red">Up to 8% p.a.</span></div><div class="highlight-row"><span>Minimum Balance</span><span class="val-red">₦5,000</span></div><div class="highlight-row"><span>Withdrawal</span><span class="val-red">Anytime</span></div><div class="highlight-row"><span>Account Type</span><span class="val-red">Individual / Joint</span></div><div class="highlight-row"><span>Virtual Account</span><span class="val-red">Included</span></div><div class="highlight-row"><span>Interest Payment</span><span class="val-red">Monthly</span></div>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">What You Get</h2>
+    <p class="section-sub">Everything you need, designed around your financial goals.</p>
+    <div class="features-grid"><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-percent"></i></div><h3>Competitive Interest</h3><p>Earn up to 8% per annum on your savings balance, credited monthly. The more you save, the more you earn.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h3>24/7 Access</h3><p>Check balances, make transfers, and monitor your savings anytime through our mobile app or internet banking portal.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-university"></i></div><h3>Virtual Account</h3><p>Every savings member gets a dedicated Providus Bank virtual account number for receiving transfers directly from any Nigerian bank.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-lock"></i></div><h3>Savings Targets</h3><p>Set savings goals and track your progress. Our app helps you automate periodic savings from your virtual account.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-arrow-up"></i></div><h3>Loan Qualification</h3><p>Your savings history is the gateway to loan eligibility. Active savers get faster loan approvals and better credit limits.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Transaction Alerts</h3><p>Instant SMS and email notifications for every deposit, withdrawal, and interest credit to your account.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="req-grid">
+      <div>
+        <div class="section-label">Requirements</div>
+        <h2 class="section-title" style="font-size:28px;">What You'll Need</h2>
+        <p style="color:var(--text-muted);line-height:1.7;margin-bottom:28px;font-size:15px;">Getting started is straightforward. Prepare these documents and you can apply in minutes.</p>
+        <ul class="req-list"><li>Valid government-issued ID</li><li>Bank Verification Number (BVN)</li><li>Proof of address (utility bill, within 3 months)</li><li>Passport photograph</li><li>Completed membership application form</li><li>Opening deposit of ₦5,000 minimum</li></ul>
+      </div>
+      <div>
+        <div class="section-label">How to Apply</div>
+        <h2 class="section-title" style="font-size:28px;">Simple Steps</h2>
+        <div class="steps-row"><div class="step-box fade-in"><div class="step-circle">1</div><h4>Apply Online</h4><p>Complete the membership form on our website or app.</p></div><div class="step-box fade-in"><div class="step-circle">2</div><h4>KYC Verification</h4><p>Submit your documents and complete BVN verification.</p></div><div class="step-box fade-in"><div class="step-circle">3</div><h4>Account Activated</h4><p>Your account and virtual account number are issued.</p></div><div class="step-box fade-in"><div class="step-circle">4</div><h4>Start Saving</h4><p>Fund your account and begin earning interest.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-1);">
+  <div class="container" style="max-width:800px;">
+    <div class="section-label">FAQs</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list"><div class="faq-item"><div class="faq-q">When is interest credited to my account?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Interest is calculated daily on your closing balance and credited to your account on the last business day of each month.</p></div></div><div class="faq-item"><div class="faq-q">Is there a minimum balance requirement?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes. A minimum balance of ₦5,000 is required to earn interest. Accounts falling below this threshold are not charged fees but will not earn interest for that month.</p></div></div><div class="faq-item"><div class="faq-q">Can I withdraw my savings at any time?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes. Your savings account is fully liquid. You can withdraw via your linked bank account, ATM card, or from our branch at any time during business hours.</p></div></div><div class="faq-item"><div class="faq-q">Can I open a joint savings account?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes. Joint savings accounts are available for couples, business partners, or cooperative groups. All signatories must complete KYC verification.</p></div></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-bar">
+      <div><h3>Ready to Savings Account?</h3><p>Join thousands of Fastfunds members already benefiting today.</p></div>
+      <div class="cta-bar-actions">
+        <a href="account-opening.html" class="btn-cta-w"><i class="fas fa-user-plus"></i> Apply Now</a>
+        <a href="contact.html" class="btn-cta-o">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const a=item.querySelector('.faq-a');
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').classList.remove('open');});
+      if(!isOpen){item.classList.add('open');a.classList.add('open');}
+    });
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul>
+        <li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li>
+        <li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li>
+        <li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li>
+        <li><a href="investments.html">Investments</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li>
+        <li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li>
+        <li><a href="about.html#partners">Partners</a></li><li><a href="csr.html">CSR</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Support</h5><ul>
+        <li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

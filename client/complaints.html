@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complaints & Dispute Resolution — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+  .top-bar{background:var(--dark);color:rgba(255,255,255,.6);font-size:12px;padding:8px 0;}
+  .top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .top-bar a:hover{color:#fff;}
+  .top-bar .left{display:flex;gap:20px;align-items:center;}
+  .top-bar .left span{display:flex;align-items:center;gap:6px;}
+  .top-bar .left i{color:var(--primary);font-size:11px;}
+  nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+  nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.12);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+  .logo{flex-shrink:0;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+  .logo-text{line-height:1.1;}
+  .logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+  .logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;display:block;}
+  .nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+  .nav-links li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-links a i{font-size:10px;opacity:.6;}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+  .nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+  .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+  .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+  .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+  .mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+  .mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .mobile-actions{display:flex;flex-direction:column;gap:12px;}
+  .mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+  .section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+  .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+  .page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.15) 0%,transparent 70%);}
+  .page-hero .container{position:relative;z-index:1;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px;}
+  .breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb i{font-size:10px;}
+  .page-hero h1{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.7;}
+  .page-hero .hero-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;}
+  .hero-tag i{color:var(--primary);font-size:11px;}
+  footer{background:var(--dark-2);color:rgba(255,255,255,.6);padding:64px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.45);margin:16px 0 20px;}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.08);}
+  .social-links a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .footer-col h5{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,.3);gap:20px;flex-wrap:wrap;}
+  .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-red-bar{height:4px;background:var(--primary);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+
+  .steps-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .steps-flow::before{content:'';position:absolute;top:36px;left:calc(12.5% + 24px);right:calc(12.5% + 24px);height:2px;background:repeating-linear-gradient(90deg,var(--primary) 0,var(--primary) 8px,transparent 8px,transparent 16px);}
+  .step-item{text-align:center;padding:0 20px;position:relative;z-index:1;}
+  .step-num{width:72px;height:72px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:24px;font-weight:800;margin:0 auto 20px;box-shadow:0 8px 24px rgba(212,0,26,.3);}
+  .step-item h4{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .step-item p{font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+  .complaint-form{background:#fff;border:1px solid var(--gray-2);border-radius:16px;padding:40px;max-width:720px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+  .form-group label{font-size:13.5px;font-weight:600;color:var(--text);}
+  .form-group input,.form-group select,.form-group textarea{padding:12px 16px;border:1.5px solid var(--gray-2);border-radius:8px;font-size:14px;font-family:'Instrument Sans',sans-serif;color:var(--text);transition:border-color .2s;outline:none;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);}
+  .form-group textarea{resize:vertical;min-height:120px;}
+  .file-upload{border:2px dashed var(--gray-3);border-radius:8px;padding:24px;text-align:center;cursor:pointer;transition:all .2s;}
+  .file-upload:hover{border-color:var(--primary);background:rgba(212,0,26,.02);}
+  .file-upload i{font-size:24px;color:var(--text-muted);margin-bottom:8px;display:block;}
+  .file-upload p{font-size:13.5px;color:var(--text-muted);}
+  .channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .channel-card{background:#fff;border:1px solid var(--gray-2);border-radius:12px;padding:28px 24px;text-align:center;transition:all .25s;}
+  .channel-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-4px);}
+  .channel-icon{width:56px;height:56px;background:rgba(212,0,26,.06);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .channel-icon i{font-size:22px;color:var(--primary);}
+  .channel-card h4{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .channel-card p{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:12px;}
+  .channel-card a{font-size:13.5px;color:var(--primary);text-decoration:none;font-weight:600;}
+  .timeline-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,0,26,.06);border:1px solid rgba(212,0,26,.15);color:var(--primary);font-size:13px;font-weight:600;padding:8px 16px;border-radius:100px;margin-bottom:24px;}
+  .resolution-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .resolution-table th{background:var(--dark);color:#fff;padding:14px 16px;text-align:left;font-size:13px;font-weight:600;}
+  .resolution-table td{padding:14px 16px;border-bottom:1px solid var(--gray-2);vertical-align:top;}
+  .resolution-table tr:hover td{background:var(--gray-1);}
+  .status-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;}
+  .status-open{background:rgba(245,158,11,.1);color:#92400e;}
+  .status-wip{background:rgba(59,130,246,.1);color:#1e40af;}
+  .status-resolved{background:rgba(16,185,129,.1);color:#065f46;}
+  @media(max-width:1024px){.steps-flow{grid-template-columns:repeat(2,1fr)}.steps-flow::before{display:none;}.channels-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:768px){.channels-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.steps-flow{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> info@fastfunds.coop</span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="account-opening.html">Account Opening</a>
+          <a href="savings.html">Savings Account</a>
+          <a href="fixed-deposit.html">Fixed Deposit</a>
+          <a href="loans.html">Loans</a>
+          <a href="atm-cards.html">ATM Cards</a>
+          <a href="mobile-banking.html">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="business-loans.html">Business Loans</a>
+          <a href="corporate.html">Corporate Accounts</a>
+          <a href="pos-terminal.html">POS Terminal</a>
+          <a href="sme.html">SME Package</a>
+          <a href="sme.html#payroll">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="corporate.html">Corporate Banking</a>
+          <a href="investments.html">Investment Accounts</a>
+          <a href="corporate.html#proof-of-funds">Proof of Funds</a>
+          <a href="corporate.html#ngo">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="about.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Complaints</span></div>
+    <h1>Complaints & Dispute Resolution</h1>
+    <p>We take every complaint seriously. If we've fallen short of your expectations, tell us and we'll make it right — promptly, fairly, and transparently.</p>
+    <div class="hero-tags">
+      <span class="hero-tag"><i class="fas fa-clock"></i> Acknowledged within 24 hours</span>
+      <span class="hero-tag"><i class="fas fa-check-circle"></i> Resolved within 5–15 working days</span>
+      <span class="hero-tag"><i class="fas fa-shield-alt"></i> CBN Consumer Protection</span>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Our Complaint Resolution Process</h2>
+    <p class="section-sub">A clear, transparent process from submission to resolution.</p>
+    <div class="steps-flow">
+      <div class="step-item fade-in">
+        <div class="step-num">1</div>
+        <h4>Submit Your Complaint</h4>
+        <p>Use the form below, call our helpline, visit a branch, or email us. Provide as much detail as possible.</p>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">2</div>
+        <h4>Acknowledgement</h4>
+        <p>We'll acknowledge your complaint within 24 hours and issue a unique reference number.</p>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">3</div>
+        <h4>Investigation</h4>
+        <p>Our dedicated complaints team investigates and may contact you for additional information.</p>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">4</div>
+        <h4>Resolution</h4>
+        <p>We'll communicate our findings and resolution. If unsatisfied, you may escalate to the CBN.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="section-label">Submit a Complaint</div>
+      <h2 class="section-title" style="font-size:28px;">Lodge Your Complaint</h2>
+      <p style="color:var(--text-muted);line-height:1.7;margin-bottom:32px;font-size:15px;">Complete the form and we'll get back to you within 24 hours. For urgent matters, please call <strong>+234 800 FASTFUNDS</strong>.</p>
+      <div class="complaint-form">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
+          <div class="form-group"><label>Account / Member ID *</label><input type="text" placeholder="e.g. FF-2024-001234"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+234 80X XXX XXXX"></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com"></div>
+        </div>
+        <div class="form-group"><label>Complaint Category *</label>
+          <select>
+            <option value="">Select a category...</option>
+            <option>Loan Disbursement / Processing</option>
+            <option>Repayment & Deductions</option>
+            <option>Account Access / Internet Banking</option>
+            <option>Customer Service Experience</option>
+            <option>ATM / Card Issues</option>
+            <option>Incorrect Charges / Fees</option>
+            <option>Interest Rate Discrepancy</option>
+            <option>Staff Conduct</option>
+            <option>Data Privacy</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Describe Your Complaint *</label>
+          <textarea placeholder="Please describe your complaint in detail. Include dates, amounts, and any reference numbers if available..."></textarea>
+        </div>
+        <div class="form-group"><label>Supporting Documents (optional)</label>
+          <div class="file-upload"><i class="fas fa-cloud-upload-alt"></i><p>Drag & drop files here or click to browse<br><small style="font-size:11px;color:var(--text-muted);">PDF, JPG, PNG • Max 5MB each</small></p></div>
+        </div>
+        <button style="width:100%;padding:14px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .2s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> Submit Complaint</button>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Resolution Timelines</div>
+      <h2 class="section-title" style="font-size:28px;">What to Expect</h2>
+      <div class="timeline-badge"><i class="fas fa-calendar-check"></i> CBN-Compliant Timelines</div>
+      <div style="overflow-x:auto;">
+        <table class="resolution-table">
+          <thead><tr><th>Complaint Type</th><th>Target Resolution</th></tr></thead>
+          <tbody>
+            <tr><td>Simple account enquiries</td><td><span class="status-badge status-resolved">Same day</span></td></tr>
+            <tr><td>Transaction disputes</td><td><span class="status-badge status-wip">5 working days</span></td></tr>
+            <tr><td>Loan disputes</td><td><span class="status-badge status-wip">7 working days</span></td></tr>
+            <tr><td>Card / ATM issues</td><td><span class="status-badge status-wip">5 working days</span></td></tr>
+            <tr><td>Complex financial disputes</td><td><span class="status-badge status-open">15 working days</span></td></tr>
+            <tr><td>Regulatory escalations</td><td><span class="status-badge status-open">30 working days</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:rgba(212,0,26,.04);border:1px solid rgba(212,0,26,.12);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;padding:16px 20px;margin-top:24px;">
+        <h4 style="font-size:15px;margin-bottom:8px;"><i class="fas fa-external-link-alt" style="color:var(--primary);margin-right:8px;"></i>Escalation to CBN</h4>
+        <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;">If your complaint is not resolved within our target timelines, or if you are unsatisfied with our resolution, you may escalate to the CBN Consumer Protection Department at <a href="https://cbn.gov.ng" target="_blank" style="color:var(--primary);">cbn.gov.ng</a> or call <strong>0700 CALL CBN</strong> (0700 225 5226).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="section-label">Contact Channels</div>
+    <h2 class="section-title">Other Ways to Reach Us</h2>
+    <div class="channels-grid">
+      <div class="channel-card fade-in"><div class="channel-icon"><i class="fas fa-phone-alt"></i></div><h4>Phone</h4><p>Speak directly to our complaints team. Available Monday–Saturday, 8am–6pm.</p><a href="tel:+2348001234567">+234 800 FASTFUNDS</a></div>
+      <div class="channel-card fade-in"><div class="channel-icon"><i class="fas fa-envelope"></i></div><h4>Email</h4><p>Send detailed complaints with supporting documents to our dedicated address.</p><a href="mailto:complaints@fastfunds.coop">complaints@fastfunds.coop</a></div>
+      <div class="channel-card fade-in"><div class="channel-icon"><i class="fab fa-whatsapp"></i></div><h4>WhatsApp</h4><p>Message us on WhatsApp for faster response on non-urgent complaints.</p><a href="https://wa.me/2348001234567" target="_blank">+234 800 FASTFUNDS</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul>
+        <li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li>
+        <li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li>
+        <li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li>
+        <li><a href="investments.html">Investments</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li>
+        <li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li>
+        <li><a href="about.html#partners">Partners</a></li><li><a href="csr.html">CSR</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Support</h5><ul>
+        <li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

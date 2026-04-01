@@ -11,7 +11,10 @@
       "Bash(xargs kill:*)",
       "Bash(lsof -ti:5173)",
       "Bash(curl -s http://localhost:5001/api/health)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

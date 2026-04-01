@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Banking — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+  .top-bar{background:var(--dark);color:rgba(255,255,255,.6);font-size:12px;padding:8px 0;}
+  .top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .top-bar a:hover{color:#fff;}
+  .top-bar .left{display:flex;gap:20px;align-items:center;}
+  .top-bar .left span{display:flex;align-items:center;gap:6px;}
+  .top-bar .left i{color:var(--primary);font-size:11px;}
+  nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+  nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.12);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+  .logo{flex-shrink:0;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+  .logo-text{line-height:1.1;}
+  .logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+  .logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;display:block;}
+  .nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+  .nav-links li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-links a i{font-size:10px;opacity:.6;}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+  .nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+  .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+  .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+  .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+  .mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+  .mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .mobile-actions{display:flex;flex-direction:column;gap:12px;}
+  .mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+  .section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+  .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+  .page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.15) 0%,transparent 70%);}
+  .page-hero .container{position:relative;z-index:1;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px;}
+  .breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb i{font-size:10px;}
+  .page-hero h1{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.7;}
+  .page-hero .hero-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;}
+  .hero-tag i{color:var(--primary);font-size:11px;}
+  footer{background:var(--dark-2);color:rgba(255,255,255,.6);padding:64px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.45);margin:16px 0 20px;}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.08);}
+  .social-links a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .footer-col h5{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,.3);gap:20px;flex-wrap:wrap;}
+  .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-red-bar{height:4px;background:var(--primary);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+
+  .corporate-tabs{background:#fff;border-bottom:1px solid var(--gray-2);position:sticky;top:var(--nav-height);z-index:100;}
+  .corporate-tabs .container{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+  .corp-tab{padding:18px 24px;font-size:14px;font-weight:600;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:8px;}
+  .corp-tab:hover{color:var(--primary);}
+  .corp-tab.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .corp-panel{display:none;}
+  .corp-panel.active{display:block;}
+  .features-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .feature-card{padding:28px 24px;background:#fff;border:1px solid var(--gray-2);border-radius:12px;transition:all .25s;}
+  .feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px);}
+  .feature-icon{width:48px;height:48px;background:rgba(212,0,26,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .feature-icon i{font-size:20px;color:var(--primary);}
+  .feature-card h3{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .feature-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+  .info-box{background:rgba(212,0,26,.04);border:1px solid rgba(212,0,26,.12);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;padding:20px 24px;margin:32px 0;}
+  .info-box h4{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .info-box p{font-size:14px;color:var(--text-muted);line-height:1.7;}
+  .req-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+  .req-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .req-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.6;}
+  .req-list li i{color:var(--primary);font-size:12px;margin-top:3px;flex-shrink:0;}
+  .cta-bar{background:var(--primary);border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:48px;}
+  .cta-bar h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;}
+  .cta-bar p{font-size:14px;color:rgba(255,255,255,.7);}
+  .btn-cta-w{padding:12px 28px;background:#fff;color:var(--primary);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+  .btn-cta-w:hover{background:var(--dark);color:#fff;}
+  @media(max-width:768px){.features-2col{grid-template-columns:1fr;}.req-col{grid-template-columns:1fr;}.cta-bar{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> info@fastfunds.coop</span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="account-opening.html">Account Opening</a>
+          <a href="savings.html">Savings Account</a>
+          <a href="fixed-deposit.html">Fixed Deposit</a>
+          <a href="loans.html">Loans</a>
+          <a href="atm-cards.html">ATM Cards</a>
+          <a href="mobile-banking.html">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="business-loans.html">Business Loans</a>
+          <a href="corporate.html">Corporate Accounts</a>
+          <a href="pos-terminal.html">POS Terminal</a>
+          <a href="sme.html">SME Package</a>
+          <a href="sme.html#payroll">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="corporate.html">Corporate Banking</a>
+          <a href="investments.html">Investment Accounts</a>
+          <a href="corporate.html#proof-of-funds">Proof of Funds</a>
+          <a href="corporate.html#ngo">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="about.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="products.html">Products</a><i class="fas fa-chevron-right"></i><span>Corporate</span></div>
+    <h1>Financial Solutions for Organisations</h1>
+    <p>Fastfunds corporate services are designed for businesses, NGOs, institutions, and high-net-worth members who need sophisticated financial management, proof of funds, and investment structures.</p>
+    <div class="hero-tags">
+      <span class="hero-tag"><i class="fas fa-building"></i> Corporate Banking</span>
+      <span class="hero-tag"><i class="fas fa-file-alt"></i> Proof of Funds</span>
+      <span class="hero-tag"><i class="fas fa-hands-helping"></i> NGO Accounts</span>
+      <span class="hero-tag"><i class="fas fa-chart-line"></i> Investment Accounts</span>
+    </div>
+  </div>
+</div>
+
+<div class="corporate-tabs">
+  <div class="container">
+    <a href="#" class="corp-tab active" data-panel="corp-banking"><i class="fas fa-university"></i> Corporate Banking</a>
+    <a href="#" class="corp-tab" data-panel="proof-of-funds"><i class="fas fa-file-invoice-dollar"></i> Proof of Funds</a>
+    <a href="#" class="corp-tab" data-panel="ngo"><i class="fas fa-hands-helping"></i> NGO Accounts</a>
+    <a href="#" class="corp-tab" data-panel="invest-acc"><i class="fas fa-chart-line"></i> Investment Accounts</a>
+  </div>
+</div>
+
+<div id="corp-banking" class="corp-panel active">
+  <section><div class="container">
+    <div class="section-label">Corporate Banking</div>
+    <h2 class="section-title">Built for Business at Scale</h2>
+    <p class="section-sub">Corporate banking at Fastfunds provides large enterprises with dedicated accounts, treasury management, and lending structured around your business cycle.</p>
+    <div class="features-2col">
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-university"></i></div><h3>Corporate Current Accounts</h3><p>Multi-signatory accounts with customisable approval workflows, high transaction limits, and dedicated relationship management.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-paper-plane"></i></div><h3>Bulk Payment Processing</h3><p>Process salary payments, supplier disbursements, and dividend payments to hundreds of recipients simultaneously.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-piggy-bank"></i></div><h3>Treasury Management</h3><p>Park idle corporate funds in high-yield short-term instruments. Earn returns on your working capital between deployment cycles.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Corporate Lending</h3><p>Large-ticket credit facilities for capital expenditure, expansion projects, and trade finance — underwritten against corporate financials.</p></div>
+    </div>
+    <div class="req-col">
+      <div><h4 style="font-size:16px;font-weight:700;margin-bottom:16px;">Requirements</h4>
+        <ul class="req-list"><li><i class="fas fa-check"></i>CAC Certificate of Incorporation</li><li><i class="fas fa-check"></i>Memorandum and Articles of Association</li><li><i class="fas fa-check"></i>Board Resolution to open account</li><li><i class="fas fa-check"></i>Valid ID for all directors</li><li><i class="fas fa-check"></i>BVN of all signatories</li><li><i class="fas fa-check"></i>Audited financial statements (last 2 years)</li><li><i class="fas fa-check"></i>Proof of business address</li></ul>
+      </div>
+      <div><h4 style="font-size:16px;font-weight:700;margin-bottom:16px;">Key Benefits</h4>
+        <ul class="req-list"><li><i class="fas fa-star"></i>Dedicated corporate relationship manager</li><li><i class="fas fa-star"></i>Preferential loan rates for established corporates</li><li><i class="fas fa-star"></i>Multi-level transaction approval workflows</li><li><i class="fas fa-star"></i>Custom reporting and reconciliation tools</li><li><i class="fas fa-star"></i>Priority queue for loan approvals</li></ul>
+      </div>
+    </div>
+    <div class="cta-bar"><div><h3>Ready to Open a Corporate Account?</h3><p>Speak with our corporate banking team today.</p></div><a href="contact.html" class="btn-cta-w"><i class="fas fa-phone-alt" style="margin-right:8px;"></i>Contact Corporate Team</a></div>
+  </div></section>
+</div>
+
+<div id="proof-of-funds" class="corp-panel">
+  <section><div class="container">
+    <div class="section-label">Proof of Funds</div>
+    <h2 class="section-title">Official Account Balance Confirmation</h2>
+    <p class="section-sub">Fastfunds issues official Proof of Funds letters on our letterhead, signed and stamped by our management — accepted for visa applications, property purchases, government tenders, and business negotiations.</p>
+    <div class="info-box"><h4><i class="fas fa-info-circle" style="color:var(--primary);margin-right:8px;"></i>What is a Proof of Funds Letter?</h4><p>A Proof of Funds (POF) letter is an official document issued by Fastfunds Cooperative confirming the balance in your account as at a specific date. It is stamped with our official seal and signed by a duly authorised officer of the society.</p></div>
+    <div class="features-2col">
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-plane"></i></div><h3>Visa Applications</h3><p>Embassy-accepted POF letters for UK, Schengen, US, Canada, UAE, and other visa applications. Available in 24 hours.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-home"></i></div><h3>Property Transactions</h3><p>Official balance confirmation for real estate purchases, mortgage applications, and property deposit requirements.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-gavel"></i></div><h3>Government Tenders</h3><p>Financial capability letters for public procurement tender submissions, as required by federal and state agencies.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-handshake"></i></div><h3>Business Negotiations</h3><p>Demonstrate your financial standing to suppliers, partners, and investors with an official cooperative letter.</p></div>
+    </div>
+    <div style="background:var(--gray-1);border-radius:12px;padding:32px;margin-top:40px;">
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;">How to Request</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="text-align:center;"><div style="width:56px;height:56px;background:var(--primary);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:20px;font-weight:800;margin:0 auto 16px;">1</div><h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Submit Request</h4><p style="font-size:13px;color:var(--text-muted);">Fill the POF request form online or at any branch. Specify the amount and purpose.</p></div>
+        <div style="text-align:center;"><div style="width:56px;height:56px;background:var(--primary);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:20px;font-weight:800;margin:0 auto 16px;">2</div><h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Pay Processing Fee</h4><p style="font-size:13px;color:var(--text-muted);">Standard POF fee as per Tariff Schedule. Urgent (same-day) service available for additional fee.</p></div>
+        <div style="text-align:center;"><div style="width:56px;height:56px;background:var(--primary);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:20px;font-weight:800;margin:0 auto 16px;">3</div><h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Receive Letter</h4><p style="font-size:13px;color:var(--text-muted);">Collect from branch or receive a stamped PDF copy via email within the agreed turnaround.</p></div>
+      </div>
+    </div>
+    <div class="cta-bar"><div><h3>Request Your Proof of Funds</h3><p>Standard turnaround: 24 hours. Urgent: same day.</p></div><a href="contact.html?subject=Proof of Funds Request" class="btn-cta-w"><i class="fas fa-file-alt" style="margin-right:8px;"></i>Request Now</a></div>
+  </div></section>
+</div>
+
+<div id="ngo" class="corp-panel">
+  <section><div class="container">
+    <div class="section-label">NGO Accounts</div>
+    <h2 class="section-title">Accounts Designed for Non-Profits</h2>
+    <p class="section-sub">Fastfunds understands the unique financial needs of NGOs, faith-based organisations, community associations, and clubs. Our NGO accounts provide full transparency, multi-signatory access, and compliance reporting.</p>
+    <div class="features-2col">
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-users-cog"></i></div><h3>Multi-Signatory Access</h3><p>Configure approval hierarchies requiring 2-of-3 or any combination of signatories for transaction authorisation — ideal for committees and boards.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-chart-pie"></i></div><h3>Fund Tracking</h3><p>Track income and expenditure by fund, project, or donor. Generate reports for board meetings, audits, and donor accountability.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-donate"></i></div><h3>Donation Collection</h3><p>Receive donations directly to your NGO account via USSD, bank transfer, or our payment link — fully auditable with donor records.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-file-signature"></i></div><h3>Compliance Reporting</h3><p>Automated reports for SCUML compliance, annual returns, and donor/funder reporting requirements.</p></div>
+    </div>
+    <div class="req-col">
+      <div><h4 style="font-size:16px;font-weight:700;margin-bottom:16px;">Requirements</h4>
+        <ul class="req-list"><li><i class="fas fa-check"></i>CAC Incorporation or Trustees registration</li><li><i class="fas fa-check"></i>Constitution / Trust Deed</li><li><i class="fas fa-check"></i>Board/Trustee resolution to open account</li><li><i class="fas fa-check"></i>Valid ID of all trustees/directors</li><li><i class="fas fa-check"></i>SCUML registration certificate</li><li><i class="fas fa-check"></i>Proof of office address</li></ul>
+      </div>
+      <div><h4 style="font-size:16px;font-weight:700;margin-bottom:16px;">Benefits</h4>
+        <ul class="req-list"><li><i class="fas fa-star"></i>No monthly maintenance fees for registered NGOs</li><li><i class="fas fa-star"></i>Free quarterly account statements</li><li><i class="fas fa-star"></i>Preferred processing for grant disbursements</li><li><i class="fas fa-star"></i>Free cheque book for operational payments</li></ul>
+      </div>
+    </div>
+    <div class="cta-bar"><div><h3>Open an NGO Account</h3><p>Dedicated support for non-profit and faith-based organisations.</p></div><a href="contact.html?subject=NGO Account Inquiry" class="btn-cta-w">Get Started</a></div>
+  </div></section>
+</div>
+
+<div id="invest-acc" class="corp-panel">
+  <section><div class="container">
+    <div class="section-label">Investment Accounts</div>
+    <h2 class="section-title">Structured Investments for Serious Wealth</h2>
+    <p class="section-sub">Fastfunds investment accounts are designed for high-value members and organisations looking to park significant capital in structured, guaranteed-return instruments managed by our investment team.</p>
+    <div class="features-2col">
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Capital-Protected Pools</h3><p>Invest ₦5,000,000 or more in our managed cooperative pools with guaranteed returns up to 18% per annum over 90–365 day tenors.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>Portfolio Management</h3><p>For investments above ₦10,000,000, our investment advisory team provides dedicated portfolio strategy and quarterly performance reviews.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-percentage"></i></div><h3>Negotiated Rates</h3><p>Large-ticket investments qualify for preferential rates negotiated with our treasury desk — typically 1–3% above our standard published rates.</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h3>Reporting & Certification</h3><p>Receive quarterly investment statements and a formal investment certificate suitable for board reporting and regulatory filings.</p></div>
+    </div>
+    <div class="cta-bar"><div><h3>Grow Your Capital with Fastfunds</h3><p>Minimum ₦5,000,000. Speak with our investment team today.</p></div><a href="contact.html?subject=Investment Account Inquiry" class="btn-cta-w"><i class="fas fa-chart-line" style="margin-right:8px;"></i>Talk to Investments Team</a></div>
+  </div></section>
+</div>
+
+<script>
+  document.querySelectorAll('.corp-tab').forEach(tab=>{
+    tab.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelectorAll('.corp-tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.corp-panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.panel).classList.add('active');
+      window.scrollTo({top:document.querySelector('.corporate-tabs').offsetTop-80,behavior:'smooth'});
+    });
+  });
+  // Handle hash navigation
+  const hash=window.location.hash.replace('#','');
+  if(hash){const t=document.querySelector(`[data-panel="${hash}"]`);if(t)t.click();}
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul>
+        <li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li>
+        <li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li>
+        <li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li>
+        <li><a href="investments.html">Investments</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li>
+        <li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li>
+        <li><a href="about.html#partners">Partners</a></li><li><a href="csr.html">CSR</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Support</h5><ul>
+        <li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

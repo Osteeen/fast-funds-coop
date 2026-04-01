@@ -20,7 +20,7 @@ async function seed() {
     // ------------------------------------------------------------------
     const tenantResult = await client.query(`
       INSERT INTO tenants (name, primary_color, domain, status)
-      VALUES ('Kufre Finance', '#1B4332', 'kufre.com', 'active')
+      VALUES ('Fastfunds Cooperative Society Limited', '#D4001A', 'fastfunds.com', 'active')
       ON CONFLICT DO NOTHING
       RETURNING *;
     `);
@@ -40,7 +40,7 @@ async function seed() {
     const settingsResult = await client.query(`
       INSERT INTO tenant_settings
         (tenant_id, interest_rate, tier1_max_amount, tier2_max_amount, tier3_max_amount, platform_name, support_email)
-      VALUES (1, 5.00, 50000000, 150000000, 500000000, 'Kufre Loans', 'support@kufre.com')
+      VALUES (1, 5.00, 50000000, 150000000, 500000000, 'Fastfunds Cooperative Society', 'support@fastfunds.com')
       ON CONFLICT DO NOTHING
       RETURNING *;
     `);

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+  .top-bar{background:var(--dark);color:rgba(255,255,255,.6);font-size:12px;padding:8px 0;}
+  .top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .top-bar a:hover{color:#fff;}
+  .top-bar .left{display:flex;gap:20px;align-items:center;}
+  .top-bar .left span{display:flex;align-items:center;gap:6px;}
+  .top-bar .left i{color:var(--primary);font-size:11px;}
+  nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+  nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.12);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+  .logo{flex-shrink:0;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+  .logo-text{line-height:1.1;}
+  .logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+  .logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;display:block;}
+  .nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+  .nav-links li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-links a i{font-size:10px;opacity:.6;}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+  .nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
+  .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+  .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+  .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;transition:all .3s;border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+  .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+  .mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;transition:all .2s;}
+  .mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+  .mobile-actions{display:flex;flex-direction:column;gap:12px;}
+  .mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+  .section-label::before{content:'';width:20px;height:2px;background:var(--primary);border-radius:2px;}
+  .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+  .section-sub{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.7;margin-bottom:48px;}
+  .page-hero{background:var(--dark);padding:64px 0;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,.15) 0%,transparent 70%);}
+  .page-hero .container{position:relative;z-index:1;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px;}
+  .breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb i{font-size:10px;}
+  .page-hero h1{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:12px;}
+  .page-hero p{font-size:16px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.7;}
+  .page-hero .hero-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;}
+  .hero-tag i{color:var(--primary);font-size:11px;}
+  footer{background:var(--dark-2);color:rgba(255,255,255,.6);padding:64px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.45);margin:16px 0 20px;}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.08);}
+  .social-links a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .footer-col h5{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,.3);gap:20px;flex-wrap:wrap;}
+  .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:20px;transition:color .2s;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-red-bar{height:4px;background:var(--primary);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}}
+
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;}
+  .team-card{background:#fff;border:1px solid var(--gray-2);border-radius:16px;overflow:hidden;transition:all .3s;}
+  .team-card:hover{box-shadow:0 20px 48px rgba(0,0,0,.1);transform:translateY(-6px);}
+  .team-photo{height:260px;background:var(--gray-2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .team-photo.p1{background:linear-gradient(135deg,#1a0008 0%,#3d0015 100%);}
+  .team-photo.p2{background:linear-gradient(135deg,#0d1a0a 0%,#1a3d10 100%);}
+  .team-photo.p3{background:linear-gradient(135deg,#0a0d1a 0%,#10153d 100%);}
+  .team-photo.p4{background:linear-gradient(135deg,#1a1206 0%,#3d2d08 100%);}
+  .team-photo.p5{background:linear-gradient(135deg,#0a1a1a 0%,#0a3d3d 100%);}
+  .team-photo.p6{background:linear-gradient(135deg,#1a0a1a 0%,#3d0a3d 100%);}
+  .team-photo-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .team-photo-placeholder i{font-size:64px;color:rgba(255,255,255,.15);}
+  .team-photo-placeholder span{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.5px;}
+  .team-role-badge{position:absolute;bottom:16px;left:16px;background:var(--primary);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
+  .team-info{padding:24px;}
+  .team-info h3{font-size:18px;font-weight:700;margin-bottom:4px;}
+  .team-dept{font-size:13px;color:var(--primary);font-weight:600;margin-bottom:10px;}
+  .team-info p{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+  .team-socials{display:flex;gap:8px;padding-top:14px;border-top:1px solid var(--gray-2);}
+  .team-socials a{width:32px;height:32px;border-radius:8px;background:var(--gray-1);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;transition:all .2s;border:1px solid var(--gray-2);}
+  .team-socials a:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .dept-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .dept-btn{padding:8px 18px;border:1.5px solid var(--gray-3);border-radius:100px;background:#fff;color:var(--text-muted);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+  .dept-btn:hover,.dept-btn.active{border-color:var(--primary);color:var(--primary);}
+  .join-banner{background:var(--dark);border-radius:16px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:56px;}
+  .join-banner h3{font-size:24px;font-weight:800;color:#fff;margin-bottom:8px;}
+  .join-banner p{font-size:15px;color:rgba(255,255,255,.5);}
+  .btn-join{padding:12px 28px;background:var(--primary);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;flex-shrink:0;display:inline-flex;align-items:center;gap:8px;}
+  .btn-join:hover{background:var(--primary-dark);}
+  @media(max-width:768px){.join-banner{flex-direction:column;text-align:center;}.team-grid{grid-template-columns:repeat(2,1fr);}@media(max-width:480px){.team-grid{grid-template-columns:1fr;}}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <div class="left">
+      <span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span>
+      <span><i class="fas fa-envelope"></i> info@fastfunds.coop</span>
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="index.html" class="logo-mark">
+        <div class="logo-icon">FF</div>
+        <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="account-opening.html">Account Opening</a>
+          <a href="savings.html">Savings Account</a>
+          <a href="fixed-deposit.html">Fixed Deposit</a>
+          <a href="loans.html">Loans</a>
+          <a href="atm-cards.html">ATM Cards</a>
+          <a href="mobile-banking.html">Mobile Banking</a>
+        </div>
+      </li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="business-loans.html">Business Loans</a>
+          <a href="corporate.html">Corporate Accounts</a>
+          <a href="pos-terminal.html">POS Terminal</a>
+          <a href="sme.html">SME Package</a>
+          <a href="sme.html#payroll">Payroll Payments</a>
+        </div>
+      </li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="corporate.html">Corporate Banking</a>
+          <a href="investments.html">Investment Accounts</a>
+          <a href="corporate.html#proof-of-funds">Proof of Funds</a>
+          <a href="corporate.html#ngo">NGO Accounts</a>
+        </div>
+      </li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="about.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products & Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+    <a href="account-opening.html" class="btn-primary">Open Account</a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="about.html">About</a><i class="fas fa-chevron-right"></i><span>Our Team</span></div>
+    <h1>The People Behind Fastfunds</h1>
+    <p>Meet the dedicated professionals who work every day to empower our members financially. Our team brings together expertise in finance, technology, compliance, and member services.</p>
+    <div class="hero-tags">
+      <span class="hero-tag"><i class="fas fa-users"></i> 50+ Team Members</span>
+      <span class="hero-tag"><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-title">Executive & Management Team</h2>
+    <p class="section-sub">Experienced leaders committed to our members' financial wellbeing.</p>
+    <div class="dept-filter">
+      <button class="dept-btn active" data-dept="all">All</button>
+      <button class="dept-btn" data-dept="executive">Executive</button>
+      <button class="dept-btn" data-dept="finance">Finance</button>
+      <button class="dept-btn" data-dept="tech">Technology</button>
+      <button class="dept-btn" data-dept="ops">Operations</button>
+      <button class="dept-btn" data-dept="cs">Member Services</button>
+    </div>
+    <div class="team-grid" id="teamGrid">
+      <div class="team-card fade-in" data-dept="executive">
+        <div class="team-photo p1">
+          <!-- Replace .team-photo-placeholder with <img src="photo.jpg" alt="Name"> for real photos -->
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Executive</span>
+        </div>
+        <div class="team-info">
+          <h3>Adebayo Okafor</h3>
+          <div class="team-dept">Managing Director / CEO</div>
+          <p>20+ years in cooperative finance and microfinance. Former Deputy Director at National Association of Cooperative Societies. Holds MBA, University of Lagos.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="executive">
+        <div class="team-photo p2">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Executive</span>
+        </div>
+        <div class="team-info">
+          <h3>Chidinma Eze</h3>
+          <div class="team-dept">Deputy Managing Director</div>
+          <p>Expert in cooperative governance and regulatory compliance. 15 years in financial services including positions at leading microfinance institutions.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="finance">
+        <div class="team-photo p3">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Finance</span>
+        </div>
+        <div class="team-info">
+          <h3>Emeka Nwosu</h3>
+          <div class="team-dept">Chief Finance Officer</div>
+          <p>ACA-qualified with 12 years in financial management. Specialises in cooperative accounting, treasury management, and CBN regulatory reporting.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="tech">
+        <div class="team-photo p4">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Technology</span>
+        </div>
+        <div class="team-info">
+          <h3>Yusuf Abdullahi</h3>
+          <div class="team-dept">Head of IT & Digital</div>
+          <p>Full-stack engineer and digital transformation specialist. Leads development of Fastfunds digital banking platform, mobile app, and IT infrastructure.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="ops">
+        <div class="team-photo p5">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Operations</span>
+        </div>
+        <div class="team-info">
+          <h3>Folake Adeyemi</h3>
+          <div class="team-dept">Head of Credit & Risk</div>
+          <p>Credit risk specialist with background in commercial banking. Designs Fastfunds loan assessment framework and manages portfolio risk across all loan products.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="cs">
+        <div class="team-photo p6">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Member Services</span>
+        </div>
+        <div class="team-info">
+          <h3>Grace Okeke</h3>
+          <div class="team-dept">Head of Member Services</div>
+          <p>Customer experience leader with 10 years in financial services. Drives member satisfaction, complaint resolution strategy, and service delivery standards.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="ops">
+        <div class="team-photo p1">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Operations</span>
+        </div>
+        <div class="team-info">
+          <h3>Tunde Fashola</h3>
+          <div class="team-dept">Compliance & AML Officer</div>
+          <p>CAMS-certified compliance professional. Manages AML/KYC frameworks, regulatory reporting, and ensures full adherence to CBN, EFCC, and SCUML requirements.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+      <div class="team-card fade-in" data-dept="finance">
+        <div class="team-photo p2">
+          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
+          <span class="team-role-badge">Finance</span>
+        </div>
+        <div class="team-info">
+          <h3>Ngozi Obi</h3>
+          <div class="team-dept">Head of Internal Audit</div>
+          <p>Chartered accountant and internal audit specialist. Ensures financial integrity, implements control frameworks, and oversees regulatory compliance audits.</p>
+          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="join-banner fade-in">
+      <div><h3>Join Our Growing Team</h3><p>We're always looking for talented, mission-driven professionals.</p></div>
+      <a href="careers.html" class="btn-join"><i class="fas fa-briefcase"></i> View Open Positions</a>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.dept-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.dept-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const dept=btn.dataset.dept;
+      document.querySelectorAll('.team-card').forEach(c=>{c.style.display=(dept==='all'||c.dataset.dept===dept)?'':'none';});
+    });
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="display:inline-flex;">
+          <div class="logo-icon">FF</div>
+          <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div>
+        </a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul>
+        <li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li>
+        <li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li>
+        <li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li>
+        <li><a href="investments.html">Investments</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li>
+        <li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li>
+        <li><a href="about.html#partners">Partners</a></li><li><a href="csr.html">CSR</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Support</h5><ul>
+        <li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

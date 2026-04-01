@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#D4001A;--primary-dark:#A80015;--dark:#0A0A0A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+.top-bar{background:var(--dark);color:rgba(255,255,255,0.6);font-size:12px;padding:8px 0;}
+.top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar a{color:rgba(255,255,255,0.5);text-decoration:none;margin-left:20px;}.top-bar a:hover{color:var(--white);}
+.top-bar .left{display:flex;gap:20px;align-items:center;}.top-bar .left span{display:flex;align-items:center;gap:6px;}.top-bar .left i{color:var(--primary);font-size:11px;}
+nav{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,0.12);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+.logo{flex-shrink:0;}.logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;}
+.logo-text{line-height:1.1;}.logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+.logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+.nav-links li{position:relative;}
+.nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+.nav-links a i{font-size:10px;opacity:0.6;}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+.nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}.dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-outline:hover{background:var(--primary);color:white;}
+.btn-primary{padding:9px 20px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-primary:hover{background:var(--primary-dark);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;border-radius:2px;}
+.mobile-menu{display:none;position:fixed;inset:0;background:white;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+.close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+.mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;}
+.mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+.mobile-actions{display:flex;flex-direction:column;gap:12px;}
+.mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+.page-hero{background:var(--dark);padding:72px 0;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,0.15) 0%,transparent 70%);}
+.page-hero .container{position:relative;z-index:1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;}.breadcrumb a:hover{color:white;}
+.breadcrumb i{font-size:10px;}
+.page-hero h1{font-size:clamp(32px,4vw,52px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:16px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.7;}
+/* SEARCH */
+.faq-search{background:var(--gray-1);padding:32px 0;}
+.search-wrap{max-width:600px;margin:0 auto;position:relative;}
+.search-wrap input{width:100%;padding:16px 56px 16px 20px;border:2px solid var(--gray-2);border-radius:12px;font-size:15px;font-family:'Instrument Sans',sans-serif;outline:none;transition:border-color .2s;background:white;}
+.search-wrap input:focus{border-color:var(--primary);}
+.search-wrap i{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:16px;}
+/* FAQ LAYOUT */
+.faq-section{padding:64px 0;}
+.faq-layout{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start;}
+.faq-sidebar{position:sticky;top:calc(var(--nav-height) + 24px);}
+.faq-sidebar h3{font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.cat-list{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.cat-list li a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:all .2s;}
+.cat-list li a i{font-size:14px;color:var(--primary);width:18px;}
+.cat-list li a:hover,.cat-list li a.active{background:rgba(212,0,26,0.06);color:var(--primary);}
+/* ACCORDION */
+.faq-group{margin-bottom:48px;}
+.faq-group-title{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-2);display:flex;align-items:center;gap:10px;}
+.faq-group-title i{color:var(--primary);}
+.accordion-item{border:1px solid var(--gray-2);border-radius:10px;margin-bottom:8px;overflow:hidden;transition:box-shadow .2s;}
+.accordion-item:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06);}
+.accordion-btn{width:100%;padding:18px 20px;background:white;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Sora',sans-serif;font-size:15px;font-weight:600;color:var(--dark);text-align:left;gap:16px;transition:background .2s;}
+.accordion-btn:hover{background:var(--gray-1);}
+.accordion-btn.open{background:rgba(212,0,26,0.04);}
+.accordion-btn i{font-size:12px;color:var(--primary);flex-shrink:0;transition:transform .3s;}
+.accordion-btn.open i{transform:rotate(180deg);}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.accordion-body.open{max-height:400px;}
+.accordion-body p{padding:0 20px 20px;font-size:14px;color:var(--text-muted);line-height:1.7;}
+/* STILL NEED HELP */
+.help-cta{background:var(--gray-1);border-radius:16px;padding:40px;text-align:center;margin-top:48px;}
+.help-cta h3{font-size:20px;font-weight:700;margin-bottom:8px;}
+.help-cta p{font-size:14px;color:var(--text-muted);margin-bottom:24px;}
+.help-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand .logo-name{color:white;font-size:20px;margin-bottom:4px;display:block;}.footer-brand .logo-sub{margin-bottom:16px;display:block;}
+.footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.social-links{display:flex;gap:10px;}
+.social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,0.08);}
+.social-links a:hover{background:var(--primary);color:white;border-color:var(--primary);}
+.footer-col h5{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-size:13.5px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}.footer-col ul a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,0.3);gap:20px;flex-wrap:wrap;}
+.footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:none;margin-left:20px;}.footer-bottom a:hover{color:white;}
+.footer-red-bar{height:4px;background:var(--primary);}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}.faq-layout{grid-template-columns:1fr;}.faq-sidebar{display:none;}.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;}.top-bar .right,.nav-actions .btn-outline{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div class="left"><span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span><span><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="036a6d656c436562707765766d67702d6d64">[email&#160;protected]</a></span></div>
+    <div class="right"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#savings">Account Opening</a><a href="products.html#savings">Savings Account</a><a href="products.html#lending">Loans</a><a href="products.html#cards">ATM Cards</a></div></li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#lending">Business Loans</a><a href="products.html#business">Corporate Accounts</a><a href="products.html#business">POS Terminal</a></div></li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#business">Corporate Banking</a><a href="products.html#insurance">Investments</a><a href="products.html#other">Proof of Funds</a></div></li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="fastfunds.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button></div>
+  <ul class="mobile-nav-links"><li><a href="fastfunds.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul>
+  <div class="mobile-actions"><a href="internet-banking.html" class="btn-outline">Internet Banking</a><a href="account-opening.html" class="btn-primary">Open Account</a></div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="fastfunds.html">Home</a><i class="fas fa-chevron-right"></i><span>FAQs</span></div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find quick answers to the most common questions about our products, services, and processes.</p>
+  </div>
+</div>
+
+<div class="faq-search">
+  <div class="container">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search for a question..." oninput="searchFAQ()">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-layout">
+      <!-- SIDEBAR -->
+      <div class="faq-sidebar">
+        <h3>Categories</h3>
+        <ul class="cat-list">
+          <li><a href="#membership" class="active"><i class="fas fa-users"></i> Membership</a></li>
+          <li><a href="#accounts"><i class="fas fa-university"></i> Accounts</a></li>
+          <li><a href="#loans"><i class="fas fa-hand-holding-usd"></i> Loans</a></li>
+          <li><a href="#savings"><i class="fas fa-piggy-bank"></i> Savings</a></li>
+          <li><a href="#cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+          <li><a href="#digital"><i class="fas fa-mobile-alt"></i> Digital Banking</a></li>
+          <li><a href="#security"><i class="fas fa-shield-alt"></i> Security</a></li>
+        </ul>
+      </div>
+      <!-- ACCORDION -->
+      <div id="faqContent">
+        <div class="faq-group" id="membership">
+          <div class="faq-group-title"><i class="fas fa-users"></i> Membership</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How do I become a Fastfunds member? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Becoming a member is easy. You can sign up online through our website or visit any of our offices. You'll need a valid government-issued ID, your BVN, a passport photograph, and proof of address. Membership is open to all Nigerian adults aged 18 and above.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Is there a membership fee? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>There is a one-time membership registration fee. Please visit your nearest Fastfunds office or contact us for current fee details. This fee gives you access to all our financial products and member benefits.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Can non-Nigerians become members? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Currently, Fastfunds membership is open to Nigerian citizens and legal residents with valid Nigerian BVN and identification. Foreign nationals residing in Nigeria may apply subject to additional verification requirements.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="accounts">
+          <div class="faq-group-title"><i class="fas fa-university"></i> Accounts</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What documents do I need to open an account? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>For a personal account you need: valid government-issued ID (NIN, National Passport, or Driver's Licence), your BVN, a recent passport photograph, and proof of address (utility bill or bank statement not older than 3 months). For business accounts, additional CAC documents are required.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How long does it take to open an account? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Online account opening is instant — you receive your account number within minutes of completing your application. In-branch account opening typically takes 30–60 minutes depending on document verification.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Is there a minimum balance requirement? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Our savings account has no minimum balance requirement. Fixed deposit and investment accounts have minimum balance requirements which vary by product. Please see the products page for specific details.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Can I have multiple accounts? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Yes. Members can hold multiple account types simultaneously — for example, a savings account, a fixed deposit, and a business current account — all under the same membership profile.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="loans">
+          <div class="faq-group-title"><i class="fas fa-hand-holding-usd"></i> Loans</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How do I qualify for a loan? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>To qualify for a loan you must be an active Fastfunds member, have a funded account, and not have any outstanding loan with us. First-time borrowers are eligible for our Tier 1 loan limit. Your limit increases as you build a repayment history with us.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What are the interest rates on loans? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Our personal loans are charged at a flat interest rate set by management — currently 5% per month on the principal amount. This rate applies for the duration of your loan and is fixed at the time of approval. Changes to the interest rate only affect new loan applications.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How long does loan approval take? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Most loan applications are reviewed within 24–48 business hours. Disbursement occurs on the same day as approval. Complex applications requiring additional documentation may take longer.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Can I repay my loan early? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Yes. You can repay your loan partially or in full before the due date. Early repayment may attract a small fee depending on your loan type. Please contact us before making an early repayment to get your outstanding balance and any applicable charges.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What happens if I miss a repayment? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>If your account does not have sufficient funds on the repayment due date, the debit will still be attempted and your account may go into a negative balance. Missed repayments are flagged and may affect your eligibility for future loans. Please fund your account before due dates to avoid this.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Can I take a second loan while repaying one? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>No. Our policy allows only one active loan per member at a time. You must fully repay your current loan before applying for another. This policy protects both members and the cooperative from over-indebtedness.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="savings">
+          <div class="faq-group-title"><i class="fas fa-piggy-bank"></i> Savings & Deposits</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What interest rate do I earn on my savings? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Our savings account currently offers competitive interest rates. Fixed deposit rates are higher and vary by tenor. Please check our products page or contact us for current rates as these are subject to change.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Can I withdraw from my fixed deposit before it matures? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Early withdrawal from a fixed deposit is possible but may result in a reduction of your accrued interest. The exact penalty depends on how far from maturity your withdrawal is. We recommend contacting us to understand the implications before proceeding.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How does the Target Savings plan work? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>You set a savings goal and a target date, then make regular contributions toward it. The account is designed to restrict withdrawals until the goal is met or the target date is reached, helping you stay disciplined. You earn interest throughout the savings period.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="cards">
+          <div class="faq-group-title"><i class="fas fa-credit-card"></i> Cards</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How do I request a debit card? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>You can request a debit card through the mobile app, internet banking portal, or by visiting any Fastfunds office. Cards are typically ready for collection within 3–5 working days or can be delivered to your registered address.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What should I do if my card is lost or stolen? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Immediately block your card through the mobile app or internet banking portal under "Card Management." Then call our 24/7 support line to report the loss and request a replacement card. A replacement fee may apply.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Is there a fee for the virtual card? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Virtual card generation may attract a small fee depending on card type (NGN or USD). Details are available in the mobile app. The card is instant and ideal for online shopping and subscriptions.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="digital">
+          <div class="faq-group-title"><i class="fas fa-mobile-alt"></i> Digital Banking</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How do I register for internet banking? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Visit our internet banking portal and click "Register." You'll need your account number, registered phone number, and a valid email address. An OTP will be sent to verify your details, after which you can set your login credentials.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">What is the USSD code for Fastfunds? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Dial *000# from any mobile network to access Fastfunds USSD banking. You can check your balance, transfer funds, buy airtime, and pay bills — all without internet access.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">I forgot my internet banking password. What do I do? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Click "Forgot Password" on the internet banking login page. Enter your registered email address or phone number and follow the OTP verification steps to reset your password. If you encounter any issues, contact our support team.</p></div></div>
+        </div>
+
+        <div class="faq-group" id="security">
+          <div class="faq-group-title"><i class="fas fa-shield-alt"></i> Security</div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How does Fastfunds protect my account? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>We use bank-grade encryption for all transactions, OTP verification for sensitive operations, and real-time fraud monitoring. We will never ask for your PIN, password, or OTP via phone or email. Always transact on our official platforms only.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">How do I report a suspicious transaction? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Immediately call our 24/7 helpline or send an email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="daa9bfb9afa8b3aea39abcbba9aebcafb4bea9f4b4bd">[email&#160;protected]</a>. Include your account number, the suspicious transaction details, date, and amount. Our security team will investigate and respond within 2 hours for urgent cases.</p></div></div>
+          <div class="accordion-item"><button class="accordion-btn" onclick="toggle(this)">Is my money safe with Fastfunds? <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Yes. Fastfunds is a registered cooperative society operating under Nigerian law and financial regulations. Member funds are managed responsibly with proper governance structures, independent audits, and regulatory oversight.</p></div></div>
+        </div>
+
+        <div class="help-cta">
+          <h3>Still Have Questions?</h3>
+          <p>Can't find the answer you're looking for? Our support team is ready to help.</p>
+          <div class="help-cta-btns">
+            <a href="contact.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;text-decoration:none;"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="help.html" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;text-decoration:none;"><i class="fas fa-life-ring"></i> Help Center</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="fastfunds.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a><p>Empowering members, building futures together.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html#lending">Personal Loans</a></li><li><a href="products.html#lending">Business Loans</a></li><li><a href="products.html#savings">Savings Account</a></li><li><a href="products.html#cards">ATM Cards</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="help.html">Help Center</a></li><li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="privacy.html#terms">Terms of Use</a></div></div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+function toggle(btn){
+  const body=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.accordion-btn.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});
+  if(!isOpen){btn.classList.add('open');body.classList.add('open');}
+}
+function searchFAQ(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.accordion-item').fo

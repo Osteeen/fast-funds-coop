@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News & Insights — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#D4001A;--primary-dark:#A80015;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+.top-bar{background:var(--dark);color:rgba(255,255,255,0.6);font-size:12px;padding:8px 0;}
+.top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar a{color:rgba(255,255,255,0.5);text-decoration:none;margin-left:20px;}.top-bar a:hover{color:var(--white);}
+.top-bar .left{display:flex;gap:20px;align-items:center;}.top-bar .left span{display:flex;align-items:center;gap:6px;}.top-bar .left i{color:var(--primary);font-size:11px;}
+nav{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,0.12);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:48px;}
+.logo{flex-shrink:0;}.logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+.logo-text{line-height:1.1;}.logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;color:var(--dark);display:block;}
+.logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+.nav-links li{position:relative;}
+.nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:var(--gray-1);color:var(--primary);}
+.nav-links a i{font-size:10px;opacity:0.6;}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+.nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}.dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-outline:hover{background:var(--primary);color:white;}
+.btn-primary{padding:9px 20px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-primary:hover{background:var(--primary-dark);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;border-radius:2px;}
+.mobile-menu{display:none;position:fixed;inset:0;background:white;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+.close-menu{background:none;border:none;font-size:24px;color:var(--dark);cursor:pointer;padding:8px;}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+.mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;}
+.mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+.mobile-actions{display:flex;flex-direction:column;gap:12px;}
+.mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+.page-hero{background:var(--dark);padding:72px 0;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,0,26,0.15) 0%,transparent 70%);}
+.page-hero .container{position:relative;z-index:1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;}.breadcrumb a:hover{color:white;}
+.breadcrumb i{font-size:10px;}
+.page-hero h1{font-size:clamp(32px,4vw,52px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:16px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.7;}
+/* FILTER BAR */
+.filter-bar{background:white;border-bottom:1px solid var(--gray-2);padding:0;}
+.filter-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:16px;padding-bottom:16px;}
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-tab{padding:7px 16px;border:1.5px solid var(--gray-2);border-radius:100px;background:white;color:var(--text-muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.filter-tab:hover{border-color:var(--primary);color:var(--primary);}
+.filter-tab.active{background:var(--primary);border-color:var(--primary);color:white;}
+.live-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+/* NEWS GRID */
+.news-section{padding:64px 0;background:var(--gray-1);}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.news-card{background:white;border:1px solid var(--gray-2);border-radius:14px;overflow:hidden;transition:all .25s;opacity:0;transform:translateY(16px);animation:cardIn .4s forwards;}
+@keyframes cardIn{to{opacity:1;transform:translateY(0);}}
+.news-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.1);transform:translateY(-4px);}
+.news-img{height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.news-img i{font-size:48px;color:rgba(255,255,255,0.15);}
+.news-cat{position:absolute;top:12px;left:12px;background:var(--primary);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;}
+.news-source{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.5);color:rgba(255,255,255,0.7);font-size:10px;padding:3px 8px;border-radius:4px;}
+.news-body{padding:20px;}
+.news-date{font-size:12px;color:var(--text-muted);margin-bottom:10px;}
+.news-body h3{font-size:15.5px;font-weight:600;line-height:1.4;margin-bottom:10px;color:var(--dark);}
+.news-body p{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+.read-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;transition:gap .2s;}
+.read-more:hover{gap:10px;}
+/* SKELETON */
+.skeleton-card{background:white;border:1px solid var(--gray-2);border-radius:14px;overflow:hidden;}
+.skel{background:var(--gray-2);border-radius:4px;animation:shimmer 1.5s infinite;}
+@keyframes shimmer{0%,100%{opacity:1;}50%{opacity:.4;}}
+.skel-img{height:200px;width:100%;}
+.skel-body{padding:20px;display:flex;flex-direction:column;gap:10px;}
+/* LOAD MORE */
+.load-more-wrap{text-align:center;margin-top:40px;}
+.btn-load{padding:12px 32px;border:1.5px solid var(--primary);border-radius:8px;color:var(--primary);background:white;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;}
+.btn-load:hover{background:var(--primary);color:white;}
+.btn-load:disabled{opacity:.5;cursor:not-allowed;}
+/* FEATURED */
+.featured-card{background:white;border:1px solid var(--gray-2);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:40px;transition:all .25s;}
+.featured-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.1);}
+.featured-img{height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;position:relative;}
+.featured-img i{font-size:80px;color:rgba(255,255,255,0.15);}
+.featured-body{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;}
+.featured-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(212,0,26,0.08);color:var(--primary);font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.5px;width:fit-content;}
+.featured-body h2{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:12px;color:var(--dark);}
+.featured-body p{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;}
+/* NEWSLETTER */
+.newsletter{background:var(--dark);padding:64px 0;}
+.newsletter-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.newsletter h2{font-size:28px;font-weight:700;color:white;margin-bottom:8px;}
+.newsletter p{font-size:15px;color:rgba(255,255,255,0.5);}
+.newsletter-form{display:flex;gap:12px;flex-shrink:0;}
+.newsletter-form input{padding:12px 20px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background:rgba(255,255,255,0.06);color:white;font-size:14px;font-family:'Instrument Sans',sans-serif;width:280px;outline:none;transition:border-color .2s;}
+.newsletter-form input::placeholder{color:rgba(255,255,255,0.3);}
+.newsletter-form input:focus{border-color:rgba(255,255,255,0.4);}
+.newsletter-form button{padding:12px 24px;background:var(--primary);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'Instrument Sans',sans-serif;transition:background .2s;}
+.newsletter-form button:hover{background:var(--primary-dark);}
+footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand .logo-name{color:white;font-size:20px;margin-bottom:4px;display:block;}.footer-brand .logo-sub{margin-bottom:16px;display:block;}
+.footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.social-links{display:flex;gap:10px;}
+.social-links a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,0.08);}
+.social-links a:hover{background:var(--primary);color:white;border-color:var(--primary);}
+.footer-col h5{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-size:13.5px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}.footer-col ul a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12.5px;color:rgba(255,255,255,0.3);gap:20px;flex-wrap:wrap;}
+.footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:none;margin-left:20px;}.footer-bottom a:hover{color:white;}
+.footer-red-bar{height:4px;background:var(--primary);}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.featured-card{grid-template-columns:1fr;}}
+@media(max-width:768px){.news-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.top-bar .right,.nav-actions .btn-outline{display:none;}.newsletter-inner{flex-direction:column;}.newsletter-form{flex-direction:column;width:100%;}.newsletter-form input{width:100%;}}
+@media(max-width:480px){.news-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div class="left"><span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span><span><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741d1a121b341215070012011a10075a1a13">[email&#160;protected]</a></span></div>
+    <div class="right"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
+    <ul class="nav-links">
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#savings">Account Opening</a><a href="products.html#savings">Savings Account</a><a href="products.html#lending">Loans</a><a href="products.html#cards">ATM Cards</a></div></li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#lending">Business Loans</a><a href="products.html#business">Corporate Accounts</a><a href="products.html#business">POS Terminal</a></div></li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="products.html#business">Corporate Banking</a><a href="products.html#insurance">Investments</a><a href="products.html#other">Proof of Funds</a></div></li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="fastfunds.html#partners">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header"><a href="fastfunds.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button></div>
+  <ul class="mobile-nav-links"><li><a href="fastfunds.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul>
+  <div class="mobile-actions"><a href="internet-banking.html" class="btn-outline">Internet Banking</a><a href="account-opening.html" class="btn-primary">Open Account</a></div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="fastfunds.html">Home</a><i class="fas fa-chevron-right"></i><span>News & Insights</span></div>
+    <h1>News & Finance Insights</h1>
+    <p>Stay informed with the latest financial news, cooperative updates, and insights from Nigeria's finance sector — updated automatically.</p>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-cat="all">All</button>
+      <button class="filter-tab" data-cat="Banking">Banking</button>
+      <button class="filter-tab" data-cat="Loans">Loans</button>
+      <button class="filter-tab" data-cat="Markets">Markets</button>
+      <button class="filter-tab" data-cat="Currency">Currency</button>
+      <button class="filter-tab" data-cat="Regulation">Regulation</button>
+      <button class="filter-tab" data-cat="Finance">Finance</button>
+    </div>
+    <div class="live-badge"><div class="live-dot"></div><span id="feedLabel">Fetching latest news...</span></div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<section class="news-section">
+  <div class="container">
+    <!-- FEATURED -->
+    <div id="featuredWrap"></div>
+    <!-- GRID -->
+    <div class="news-grid" id="newsGrid">
+      <div class="skeleton-card"><div class="skel skel-img"></div><div class="skel-body"><div class="skel" style="height:12px;width:40%;"></div><div class="skel" style="height:18px;width:90%;"></div><div class="skel" style="height:18px;width:70%;"></div><div class="skel" style="height:13px;width:100%;"></div><div class="skel" style="height:13px;width:80%;"></div></div></div>
+      <div class="skeleton-card"><div class="skel skel-img"></div><div class="skel-body"><div class="skel" style="height:12px;width:35%;"></div><div class="skel" style="height:18px;width:85%;"></div><div class="skel" style="height:18px;width:65%;"></div><div class="skel" style="height:13px;width:100%;"></div><div class="skel" style="height:13px;width:75%;"></div></div></div>
+      <div class="skeleton-card"><div class="skel skel-img"></div><div class="skel-body"><div class="skel" style="height:12px;width:45%;"></div><div class="skel" style="height:18px;width:88%;"></div><div class="skel" style="height:18px;width:60%;"></div><div class="skel" style="height:13px;width:100%;"></div><div class="skel" style="height:13px;width:70%;"></div></div></div>
+    </div>
+    <div class="load-more-wrap"><button class="btn-load" id="loadMoreBtn" style="display:none;" onclick="loadMore()"><i class="fas fa-sync-alt"></i> Load More Articles</button></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div><h2>Stay Informed</h2><p>Get the latest financial news and Fastfunds updates delivered to your inbox weekly.</p></div>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" id="emailInput">
+        <button onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="fastfunds.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a><p>Empowering members, building futures together.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html#lending">Personal Loans</a></li><li><a href="products.html#lending">Business Loans</a></li><li><a href="products.html#savings">Savings Account</a></li><li><a href="products.html#cards">ATM Cards</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="help.html">Help Center</a></li><li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="privacy.html#terms">Terms of Use</a></div></div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+
+const RSS_FEEDS=['https://nairametrics.com/feed/','https://businessday.ng/feed/'];
+const RSS2JSON='https://api.rss2json.com/v1/api.json?rss_url=';
+const BGS=['linear-gradient(135deg,#1a0008 0%,#3d0015 100%)','linear-gradient(135deg,#0d1a0a 0%,#1a3d10 100%)','linear-gradient(135deg,#0a0d1a 0%,#10153d 100%)','linear-gradient(135deg,#1a1000 0%,#3d2d00 100%)','linear-gradient(135deg,#0a1a1a 0%,#0a3d3d 100%)','linear-gradient(135deg,#1a0a1a 0%,#3d0a3d 100%)'];
+const ICONS=['fa-newspaper','fa-chart-line','fa-landmark','fa-coins','fa-university','fa-hand-holding-usd'];
+let allItems=[];let currentFilter='all';
+
+function fmtDate(d){try{return new Date(d).toLocaleDateString('en-NG',{day:'numeric',month:'long',year:'numeric'});}catch(e){return '';}}
+function strip(h){const t=document.createElement('div');t.innerHTML=h||'';return(t.textContent||t.innerText||'').trim().slice(0,140)+'...';}
+function getCat(t){const s=(t||'').toLowerCase();if(s.includes('loan')||s.includes('credit'))return'Loans';if(s.includes('cbn')||s.includes('central bank'))return'Regulation';if(s.includes('stock')||s.includes('invest')||s.includes('market')||s.includes('ngx'))return'Markets';if(s.includes('naira')||s.includes('forex')||s.includes('dollar'))return'Currency';if(s.includes('bank')||s.includes('fintech'))return'Banking';return'Finance';}
+
+function makeCard(item,idx,delay){
+  const bg=BGS[idx%BGS.length];const icon=ICONS[idx%ICONS.length];const cat=getCat(item.title);
+  const desc=item.description?strip(item.description):'Read the full article for more details on this finance story.';
+  const date=fmtDate(item.pubDate);const link=item.link||'#';
+  return`<div class="news-card" data-cat="${cat}" style="animation-delay:${delay}ms;">
+    <div class="news-img" style="background:${bg};"><i class="fas ${icon}"></i><span class="news-cat">${cat}</span></div>
+    <div class="news-body">
+      ${date?`<div class="news-date"><i class="fas fa-calendar-alt" style="margin-right:6px;color:var(--primary);"></i>${date}</div>`:''}
+      <h3>${item.title||'Finance Update'}</h3><p>${desc}</p>
+      <a href="${link}" target="_blank" rel="noopener" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>`;}
+
+function makeFeatured(item){
+  const cat=getCat(item.title);
+  return`<div class="featured-card">
+    <div class="featured-img" style="background:linear-gradient(135deg,#1a0008 0%,#3d0015 100%);"><i class="fas fa-star" style="font-size:80px;color:rgba(255,255,255,0.1);"></i></div>
+    <div class="featured-body">
+      <div class="featured-tag"><i class="fas fa-fire"></i> Featured Story</div>
+      <h2>${item.title}</h2>
+      <p>${item.description?strip(item.description):'Click to read the full story.'}</p>
+      <a href="${item.link||'#'}" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;">Read Full Story <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>`;}
+
+function renderGrid(items){
+  const grid=document.getElementById('newsGrid');
+  const filtered=currentFilter==='all'?items:items.filter(i=>getCat(i.title)===currentFilter);
+  if(!filtered.length){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--text-muted);"><i class="fas fa-newspaper" style="font-size:48px;opacity:.2;display:block;margin-bottom:16px;"></i><p>No articles found for this category.</p></div>';return;}
+  grid.innerHTML=filtered.map((item,i)=>makeCard(item,i,i*60)).join('');
+}
+
+async function loadNews(){
+  for(const feed of RSS_FEEDS){
+    try{
+      const res=await fetch(`${RSS2JSON}${encodeURIComponent(feed)}&count=12`);
+      const data=await res.json();
+      if(data.status==='ok'&&data.items&&data.items.length>0){
+        allItems=data.items;
+        document.getElementById('featuredWrap').innerHTML=makeFeatured(data.items[0]);
+        renderGrid(data.items.slice(1));
+        document.getElementById('feedLabel').textContent=`Live feed from ${data.feed&&data.feed.title?data.feed.title:'Finance News'}`;
+        document.getElementById('loadMoreBtn').style.display='inline-flex';
+        return;
+      }
+    }catch(e){continue;}
+  }
+  document.getElementById('newsGrid').innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--text-muted);"><i class="fas fa-wifi" style="font-size:48px;opacity:.2;display:block;margin-bottom:16px;"></i><p>Could not load live news. Please check your connection.</p></div>`;
+  document.getElementById('feedLabel').textContent='Feed unavailable';
+}
+
+function loadMore(){const btn=document.getElementById('loadMoreBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Loading...';setTimeout(()=>{btn.disabled=false;btn.innerHTML='<i class="fas fa-sync-alt"></i> Load More Articles';alert('All available articles loaded.');},1200);}
+
+document.querySelectorAll('.filter-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');currentFilter=btn.dataset.cat;renderGrid(allItems.slice(1));});});
+
+function subscribeNewsletter(){const e=document.getElementById('emailInput').value;if
