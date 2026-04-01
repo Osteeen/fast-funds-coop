@@ -1739,6 +1739,17 @@
 
   document.querySelectorAll('.fade-in, .stat-num').forEach(el => observer.observe(el));
 
+  // Quick-access drag-to-scroll (desktop)
+  const qs = document.querySelector('.quick-scroll');
+  if (qs) {
+    let isDown = false, startX, scrollLeft;
+    qs.addEventListener('mousedown', e => { isDown = true; qs.style.cursor = 'grabbing'; startX = e.pageX - qs.offsetLeft; scrollLeft = qs.scrollLeft; });
+    qs.addEventListener('mouseleave', () => { isDown = false; qs.style.cursor = 'grab'; });
+    qs.addEventListener('mouseup', () => { isDown = false; qs.style.cursor = 'grab'; });
+    qs.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); qs.scrollLeft = scrollLeft - (e.pageX - qs.offsetLeft - startX); });
+    qs.style.cursor = 'grab';
+  }
+
   // About grid responsive
   const aboutGrid = document.querySelector('.about-grid');
   function checkAbout() {
