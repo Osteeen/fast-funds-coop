@@ -37,7 +37,9 @@
   .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
   .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
   .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
-  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-partner{padding:9px 18px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:700;background:var(--gold);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}.btn-partner:hover{background:#b8871f;}
+input,select,textarea{font-size:16px;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
   .btn-outline:hover{background:var(--primary);color:#fff;}
   .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
   .btn-primary:hover{background:var(--primary-dark);}
@@ -142,20 +144,22 @@
   <div class="nav-inner">
     <div class="logo">
       <a href="index.html" class="logo-mark">
-        <div class="logo-icon">FF</div>
+        <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
         <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub" style="color:rgba(255,255,255,0.5);">Cooperative Society Limited</span></div>
       </a>
     </div>
     <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
       <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="account-opening.html">Account Opening</a><a href="savings.html">Savings Account</a><a href="fixed-deposit.html">Fixed Deposit</a><a href="loans.html">Loans</a><a href="atm-cards.html">ATM Cards</a><a href="mobile-banking.html">Mobile Banking</a></div></li>
       <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="business-loans.html">Business Loans</a><a href="corporate.html">Corporate Accounts</a><a href="pos-terminal.html">POS Terminal</a><a href="sme.html">SME Package</a><a href="sme.html#payroll">Payroll Payments</a></div></li>
       <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="corporate.html">Corporate Banking</a><a href="corporate.html#invest-acc">Investment Accounts</a><a href="corporate.html#proof-of-funds">Proof of Funds</a><a href="corporate.html#ngo">NGO Accounts</a></div></li>
       <li><a href="products.html">Services</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="#">News & Media <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="news.html">Latest News</a><a href="news.html">Press Releases</a><a href="news.html">Media Kit</a></div></li>
+      <li><a href="partners.html">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
+      <a href="contact.html?subject=Partnership Inquiry" class="btn-partner">Partner With Us</a>
       <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
       <a href="account-opening.html" class="btn-primary">Open Account</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -164,7 +168,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-header">
-    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <a href="index.html" class="logo-mark"><div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
     <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   </div>
   <ul class="mobile-nav-links">
@@ -312,7 +316,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo-mark" style="margin-bottom:16px; display:inline-flex;">
-          <div class="logo-icon">FF</div>
+          <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
           <div class="logo-text">
             <span class="logo-name">Fastfunds</span>
             <span class="logo-sub">Cooperative Society Limited</span>
@@ -346,7 +350,7 @@
           <li><a href="team.html">Our Team</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">News</a></li>
-          <li><a href="csr.html">Partners</a></li>
+          <li><a href="partners.html">Partners</a></li>
           <li><a href="csr.html">CSR</a></li>
         </ul>
       </div>

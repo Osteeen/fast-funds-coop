@@ -37,7 +37,9 @@
   .dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}
   .dropdown a:hover{background:var(--gray-1);color:var(--primary);}
   .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
-  .btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+  .btn-partner{padding:9px 18px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:700;background:var(--gold);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}.btn-partner:hover{background:#b8871f;}
+input,select,textarea{font-size:16px;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
   .btn-outline:hover{background:var(--primary);color:#fff;}
   .btn-primary{padding:9px 20px;border:none;border-radius:6px;color:#fff;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
   .btn-primary:hover{background:var(--primary-dark);}
@@ -142,20 +144,22 @@
   <div class="nav-inner">
     <div class="logo">
       <a href="index.html" class="logo-mark">
-        <div class="logo-icon">FF</div>
+        <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
         <div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub" style="color:rgba(255,255,255,0.5);">Cooperative Society Limited</span></div>
       </a>
     </div>
     <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
       <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="account-opening.html">Account Opening</a><a href="savings.html">Savings Account</a><a href="fixed-deposit.html">Fixed Deposit</a><a href="loans.html">Loans</a><a href="atm-cards.html">ATM Cards</a><a href="mobile-banking.html">Mobile Banking</a></div></li>
       <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="business-loans.html">Business Loans</a><a href="corporate.html">Corporate Accounts</a><a href="pos-terminal.html">POS Terminal</a><a href="sme.html">SME Package</a><a href="sme.html#payroll">Payroll Payments</a></div></li>
       <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="corporate.html">Corporate Banking</a><a href="corporate.html#invest-acc">Investment Accounts</a><a href="corporate.html#proof-of-funds">Proof of Funds</a><a href="corporate.html#ngo">NGO Accounts</a></div></li>
       <li><a href="products.html">Services</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="#">News & Media <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="news.html">Latest News</a><a href="news.html">Press Releases</a><a href="news.html">Media Kit</a></div></li>
+      <li><a href="partners.html">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
+      <a href="contact.html?subject=Partnership Inquiry" class="btn-partner">Partner With Us</a>
       <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
       <a href="account-opening.html" class="btn-primary">Open Account</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -164,7 +168,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-header">
-    <a href="index.html" class="logo-mark"><div class="logo-icon">FF</div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
+    <a href="index.html" class="logo-mark"><div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a>
     <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   </div>
   <ul class="mobile-nav-links">
@@ -207,100 +211,53 @@
     </div>
     <div class="team-grid" id="teamGrid">
       <div class="team-card fade-in" data-dept="executive">
-        <div class="team-photo p1">
-          <!-- Replace .team-photo-placeholder with <img src="photo.jpg" alt="Name"> for real photos -->
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Executive</span>
+        <div class="team-photo" style="background:#111;">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James T. Hartwell" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         </div>
         <div class="team-info">
-          <h3>Adebayo Okafor</h3>
-          <div class="team-dept">Managing Director / CEO</div>
-          <p>20+ years in cooperative finance and microfinance. Former Deputy Director at National Association of Cooperative Societies. Holds MBA, University of Lagos.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+          <h3>James T. Hartwell</h3>
+          <div class="team-role">Managing Director / CEO</div>
+          <div class="team-dept">International (UK)</div>
         </div>
       </div>
       <div class="team-card fade-in" data-dept="executive">
-        <div class="team-photo p2">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Executive</span>
+        <div class="team-photo" style="background:#111;">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Robert A. Calloway" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         </div>
         <div class="team-info">
-          <h3>Chidinma Eze</h3>
-          <div class="team-dept">Deputy Managing Director</div>
-          <p>Expert in cooperative governance and regulatory compliance. 15 years in financial services including positions at leading microfinance institutions.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+          <h3>Robert A. Calloway</h3>
+          <div class="team-role">Deputy Managing Director</div>
+          <div class="team-dept">International (USA)</div>
         </div>
       </div>
-      <div class="team-card fade-in" data-dept="finance">
-        <div class="team-photo p3">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Finance</span>
+      <div class="team-card fade-in" data-dept="executive">
+        <div class="team-photo" style="background:#111;">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Adunola Fashola" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         </div>
         <div class="team-info">
-          <h3>Emeka Nwosu</h3>
-          <div class="team-dept">Chief Finance Officer</div>
-          <p>ACA-qualified with 12 years in financial management. Specialises in cooperative accounting, treasury management, and CBN regulatory reporting.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+          <h3>Adunola Fashola</h3>
+          <div class="team-role">Head of Operations</div>
+          <div class="team-dept">Yoruba, Nigeria</div>
         </div>
       </div>
-      <div class="team-card fade-in" data-dept="tech">
-        <div class="team-photo p4">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Technology</span>
+      <div class="team-card fade-in" data-dept="executive">
+        <div class="team-photo" style="background:#111;">
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Emeka Okonkwo" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         </div>
         <div class="team-info">
-          <h3>Yusuf Abdullahi</h3>
-          <div class="team-dept">Head of IT & Digital</div>
-          <p>Full-stack engineer and digital transformation specialist. Leads development of Fastfunds digital banking platform, mobile app, and IT infrastructure.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
+          <h3>Emeka Okonkwo</h3>
+          <div class="team-role">Chief Finance Officer</div>
+          <div class="team-dept">Igbo, Nigeria</div>
         </div>
       </div>
-      <div class="team-card fade-in" data-dept="ops">
-        <div class="team-photo p5">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Operations</span>
+      <div class="team-card fade-in" data-dept="executive">
+        <div class="team-photo" style="background:#111;">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Daniel W. Prescott" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         </div>
         <div class="team-info">
-          <h3>Folake Adeyemi</h3>
-          <div class="team-dept">Head of Credit & Risk</div>
-          <p>Credit risk specialist with background in commercial banking. Designs Fastfunds loan assessment framework and manages portfolio risk across all loan products.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
-        </div>
-      </div>
-      <div class="team-card fade-in" data-dept="cs">
-        <div class="team-photo p6">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Member Services</span>
-        </div>
-        <div class="team-info">
-          <h3>Grace Okeke</h3>
-          <div class="team-dept">Head of Member Services</div>
-          <p>Customer experience leader with 10 years in financial services. Drives member satisfaction, complaint resolution strategy, and service delivery standards.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
-        </div>
-      </div>
-      <div class="team-card fade-in" data-dept="ops">
-        <div class="team-photo p1">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Operations</span>
-        </div>
-        <div class="team-info">
-          <h3>Tunde Fashola</h3>
-          <div class="team-dept">Compliance & AML Officer</div>
-          <p>CAMS-certified compliance professional. Manages AML/KYC frameworks, regulatory reporting, and ensures full adherence to CBN, EFCC, and SCUML requirements.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
-        </div>
-      </div>
-      <div class="team-card fade-in" data-dept="finance">
-        <div class="team-photo p2">
-          <div class="team-photo-placeholder"><i class="fas fa-user"></i><span>PHOTO</span></div>
-          <span class="team-role-badge">Finance</span>
-        </div>
-        <div class="team-info">
-          <h3>Ngozi Obi</h3>
-          <div class="team-dept">Head of Internal Audit</div>
-          <p>Chartered accountant and internal audit specialist. Ensures financial integrity, implements control frameworks, and oversees regulatory compliance audits.</p>
-          <div class="team-socials"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+          <h3>Daniel W. Prescott</h3>
+          <div class="team-role">Head of Credit & Risk</div>
+          <div class="team-dept">International (Canada)</div>
         </div>
       </div>
     </div>
@@ -326,7 +283,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo-mark" style="margin-bottom:16px; display:inline-flex;">
-          <div class="logo-icon">FF</div>
+          <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
           <div class="logo-text">
             <span class="logo-name">Fastfunds</span>
             <span class="logo-sub">Cooperative Society Limited</span>
@@ -360,7 +317,7 @@
           <li><a href="team.html">Our Team</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">News</a></li>
-          <li><a href="csr.html">Partners</a></li>
+          <li><a href="partners.html">Partners</a></li>
           <li><a href="csr.html">CSR</a></li>
         </ul>
       </div>

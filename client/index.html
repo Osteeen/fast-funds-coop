@@ -175,6 +175,28 @@
     margin-left: auto;
     flex-shrink: 0;
   }
+  .btn-partner {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 13.5px;
+    font-weight: 700;
+    background: var(--gold);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+    font-family: 'Instrument Sans', sans-serif;
+    white-space: nowrap;
+  }
+  .btn-partner:hover { background: #b8871f; }
+  /* Desktop: quick-access shows only 7 items, no scroll */
+  @media (min-width: 1025px) {
+    .quick-scroll { overflow: hidden; justify-content: center; }
+    .quick-item:nth-child(n+8) { display: none; }
+  }
+  /* iOS Safari: prevent zoom on input focus */
+  input, select, textarea { font-size: 16px; }
   .btn-outline {
     padding: 9px 20px;
     border: 1.5px solid var(--primary);
@@ -230,9 +252,9 @@
     background-size: cover;
     background-position: center;
   }
-  .slide-1 .slide-bg { background: linear-gradient(135deg, #0A0A0A 0%, #1a0008 50%, #2d0010 100%); }
-  .slide-2 .slide-bg { background: linear-gradient(135deg, #0d1a0a 0%, #0a2010 50%, #0f2d0a 100%); }
-  .slide-3 .slide-bg { background: linear-gradient(135deg, #0a0d1a 0%, #0a1020 50%, #05102d 100%); }
+  .slide-1 .slide-bg { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80'); background-size: cover; background-position: center; }
+  .slide-2 .slide-bg { background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80'); background-size: cover; background-position: center; }
+  .slide-3 .slide-bg { background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80'); background-size: cover; background-position: center; }
 
   .slide-overlay {
     position: absolute;
@@ -372,26 +394,7 @@
     padding: 0;
   }
   .dot.active { background: var(--primary); width: 28px; }
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(255,255,255,0.3);
-    color: white;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: all .2s;
-    font-size: 0;
-    line-height: 0;
-    padding: 0;
-  }
+  .carousel-arrow { display: none; }
   .carousel-arrow::before {
     content: '';
     display: block;
@@ -415,6 +418,19 @@
     position: relative;
     z-index: 5;
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  /* Mobile/tablet: fade hint on right edge to show more items exist */
+  @media (max-width: 1024px) {
+    .quick-access::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 56px;
+      background: linear-gradient(to right, transparent, white);
+      pointer-events: none;
+      z-index: 2;
+    }
   }
   .quick-scroll {
     max-width: 1280px;
@@ -693,6 +709,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+  @media (max-width: 1024px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
   .partner-card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
@@ -767,9 +784,10 @@
   /* ── TESTIMONIALS ── */
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
+  .service-badge { display: inline-block; font-size: 10px; font-weight: 700; color: var(--primary); background: rgba(212,0,26,0.08); padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
   .testimonial-card {
     background: white;
     border: 1px solid var(--gray-2);
@@ -1067,7 +1085,7 @@
   @media (max-width: 768px) {
     section { padding: 56px 0; }
     .hero { height: auto; min-height: 580px; }
-    .slide { align-items: flex-start; padding: 64px 0 80px; }
+    .slide { align-items: flex-start; padding: 32px 0 40px; }
     .slide-tag { margin-top: 8px; }
     .slide-content p { font-size: 15px; margin-bottom: 28px; }
     .carousel-nav { bottom: 20px; }
@@ -1080,10 +1098,6 @@
     .nav-actions .btn-outline { display: none; }
     .nav-actions .btn-primary { display: none; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
-    .carousel-arrow { width: 32px; height: 32px; }
-    .carousel-arrow::before { width: 8px; height: 8px; }
-    .carousel-prev { left: 8px; }
-    .carousel-next { right: 8px; }
   }
 
   @keyframes shimmer {
@@ -1124,7 +1138,7 @@
   <div class="nav-inner">
     <div class="logo">
       <a href="index.html" class="logo-mark">
-        <div class="logo-icon">FF</div>
+        <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
         <div class="logo-text">
           <span class="logo-name">Fastfunds</span>
           <span class="logo-sub">Cooperative Society Limited</span>
@@ -1132,6 +1146,7 @@
       </a>
     </div>
     <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
       <li>
         <a href="#">Personal <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown">
@@ -1163,11 +1178,12 @@
         </div>
       </li>
       <li><a href="products.html">Services</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="#">News & Media <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="news.html">Latest News</a><a href="news.html">Press Releases</a><a href="news.html">Media Kit</a></div></li>
+      <li><a href="partners.html">Partners</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-actions">
+      <a href="index.html#partner-with-us" class="btn-partner">Partner With Us</a>
       <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
       <a href="account-opening.html" class="btn-primary">Open Account</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
@@ -1181,7 +1197,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-header">
     <a href="index.html" class="logo-mark">
-      <div class="logo-icon">FF</div>
+      <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
       <div class="logo-text">
         <span class="logo-name">Fastfunds</span>
       </div>
@@ -1191,7 +1207,7 @@
   <ul class="mobile-nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products & Services</a></li>
-    <li><a href="about.html#partners">Partners</a></li>
+    <li><a href="partners.html">Partners</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="news.html">News</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -1251,8 +1267,6 @@
       </div>
     </div>
   </div>
-  <button class="carousel-arrow carousel-prev" id="prevBtn"></button>
-  <button class="carousel-arrow carousel-next" id="nextBtn"></button>
   <div class="carousel-nav">
     <button class="dot active" data-index="0"></button>
     <button class="dot" data-index="1"></button>
@@ -1419,31 +1433,43 @@
       <p class="section-sub">The trusted individuals and leaders who work alongside Fastfunds to deliver financial excellence across Nigeria.</p>
     </div>
     <div class="partners-grid">
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James T. Hartwell"></div><h4>James T. Hartwell</h4><p class="partner-bio">Managing Director, UK — A seasoned finance professional with over 20 years in cooperative banking and SME development.</p></div>
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Robert A. Calloway"></div><h4>Robert A. Calloway</h4><p class="partner-bio">Chief Executive, USA — Driving financial inclusion and cooperative growth in underserved communities across West Africa.</p></div>
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Daniel W. Prescott"></div><h4>Daniel W. Prescott</h4><p class="partner-bio">Director of Finance, Canada — Strategic finance expert in microfinance, loan portfolio management, and governance.</p></div>
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Adunola Fashola"></div><h4>Adunola Fashola</h4><p class="partner-bio">Head of Operations — Yoruba, Nigeria. Oversees all day-to-day operations and member service delivery across branches.</p></div>
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Emeka Okonkwo"></div><h4>Emeka Okonkwo</h4><p class="partner-bio">Investment Director — Igbo, Nigeria. Leads investment portfolio strategy and institutional partnerships.</p></div>
+      <div class="partner-card fade-in"><div class="partner-photo"><img src="https://randomuser.me/api/portraits/men/91.jpg" alt="Kwame Asante"></div><h4>Kwame Asante</h4><p class="partner-bio">Regional Director, Ghana — Expands Fastfunds' cooperative footprint across West Africa.</p></div>
+    </div>
+  </div>
+</section>
 
-      <div class="partner-card fade-in">
-        <div class="partner-photo">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James T. Hartwell">
-        </div>
-        <h4>James T. Hartwell</h4>
-        <p class="partner-bio">A seasoned finance professional with over 20 years of experience in cooperative banking and SME development across Nigeria.</p>
+<!-- PARTNER WITH US -->
+<section id="partner-with-us" style="background:var(--dark); padding:80px 0;">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="color:rgba(200,153,42,0.9); justify-content:center;"><span style="background:var(--gold);"></span>Partnership</div>
+      <h2 class="section-title" style="color:white; margin-bottom:16px;">Grow Together With Fastfunds</h2>
+      <p style="font-size:16px; color:rgba(255,255,255,0.5); max-width:640px; margin:0 auto; line-height:1.7;">We partner with financial institutions, employers, NGOs, associations, and community leaders to extend quality financial services to more Nigerians. If your organisation shares our vision, let's build something together.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:48px;" class="fade-in">
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:32px 28px;">
+        <div style="width:52px; height:52px; background:rgba(212,0,26,0.15); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;"><i class="fas fa-building" style="color:var(--primary); font-size:22px;"></i></div>
+        <h4 style="color:white; font-size:17px; font-weight:700; margin-bottom:12px;">Corporate Partnerships</h4>
+        <p style="color:rgba(255,255,255,0.5); font-size:14px; line-height:1.7;">We co-create financial products with employers to serve their workforce with payroll savings, emergency loans, and benefits schemes.</p>
       </div>
-
-      <div class="partner-card fade-in">
-        <div class="partner-photo">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Robert A. Calloway">
-        </div>
-        <h4>Robert A. Calloway</h4>
-        <p class="partner-bio">An accomplished leader driving financial inclusion and cooperative growth in underserved communities across West Africa.</p>
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:32px 28px;">
+        <div style="width:52px; height:52px; background:rgba(212,0,26,0.15); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;"><i class="fas fa-hands-helping" style="color:var(--primary); font-size:22px;"></i></div>
+        <h4 style="color:white; font-size:17px; font-weight:700; margin-bottom:12px;">Community & NGO Partners</h4>
+        <p style="color:rgba(255,255,255,0.5); font-size:14px; line-height:1.7;">Partner with us to bring cooperative banking to underserved communities, market associations, and cooperative groups.</p>
       </div>
-
-      <div class="partner-card fade-in">
-        <div class="partner-photo">
-          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Daniel W. Prescott">
-        </div>
-        <h4>Daniel W. Prescott</h4>
-        <p class="partner-bio">A strategic finance expert specialising in microfinance, loan portfolio management, and cooperative society governance.</p>
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:32px 28px;">
+        <div style="width:52px; height:52px; background:rgba(212,0,26,0.15); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;"><i class="fas fa-user-friends" style="color:var(--primary); font-size:22px;"></i></div>
+        <h4 style="color:white; font-size:17px; font-weight:700; margin-bottom:12px;">Referral Partners</h4>
+        <p style="color:rgba(255,255,255,0.5); font-size:14px; line-height:1.7;">Earn commissions by referring businesses and individuals to Fastfunds. Our referral programme rewards you for every successful onboarding.</p>
       </div>
-
+    </div>
+    <div style="text-align:center;" class="fade-in">
+      <a href="contact.html?subject=Partnership Inquiry" class="btn-partner" style="padding:16px 40px; font-size:16px; border-radius:8px;">Become a Partner <i class="fas fa-arrow-right" style="margin-left:8px;"></i></a>
     </div>
   </div>
 </section>
@@ -1456,33 +1482,16 @@
       <h2 class="section-title" style="margin-bottom:0;">What Our Members Are Saying</h2>
     </div>
     <div class="testimonials-grid">
-      <div class="testimonial-card fade-in">
-        <div class="quote-mark">"</div>
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>Fastfunds helped me secure a business loan in less than 48 hours. The process was smooth and the team was very professional throughout. I highly recommend them to any entrepreneur.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">AO</div>
-          <div><div class="reviewer-name">Adebayo Okafor</div><div class="reviewer-role">Business Owner, Lagos</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in">
-        <div class="quote-mark">"</div>
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>I've been saving with Fastfunds for two years and the interest rates are unbeatable. Their target savings plan helped me buy my first car. Truly a cooperative that cares about members.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">CN</div>
-          <div><div class="reviewer-name">Chioma Nwosu</div><div class="reviewer-role">Civil Servant, Abuja</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in">
-        <div class="quote-mark">"</div>
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <p>The POS terminal and business account from Fastfunds transformed how I collect payments. The support team is always available and the internet banking platform works flawlessly.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">IB</div>
-          <div><div class="reviewer-name">Ibrahim Bello</div><div class="reviewer-role">Retailer, Kano</div></div>
-        </div>
-      </div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Business Loan</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Fastfunds approved my business loan in under 48 hours. No stress, no hidden charges. My tailoring business has tripled since I got funded.</p><div class="reviewer"><div class="reviewer-avatar">AO</div><div><div class="reviewer-name">Adebayo Okafor</div><div class="reviewer-role">Business Owner, Lagos, Nigeria</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Savings</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Their savings interest rate is the best I've found anywhere. I hit my home ownership goal 6 months ahead of schedule.</p><div class="reviewer"><div class="reviewer-avatar">CN</div><div><div class="reviewer-name">Chioma Nwosu</div><div class="reviewer-role">Civil Servant, Abuja, Nigeria</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">POS Terminal</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>The POS terminal works everywhere, even in areas with weak network. Settlement is always next day without fail.</p><div class="reviewer"><div class="reviewer-avatar">IB</div><div><div class="reviewer-name">Ibrahim Bello</div><div class="reviewer-role">Retailer, Kano, Nigeria</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">International Transfer</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>I send money to my cooperative account in Nigeria monthly. The international transfer process is seamless and rates are fair.</p><div class="reviewer"><div class="reviewer-avatar">SM</div><div><div class="reviewer-name">Sarah Mitchell</div><div class="reviewer-role">Small Business Owner, London, UK</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Investment</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Fastfunds helped me structure my cooperative investment account. The returns have consistently beaten what my local bank offers.</p><div class="reviewer"><div class="reviewer-avatar">KM</div><div><div class="reviewer-name">Kwame Mensah</div><div class="reviewer-role">Entrepreneur, Accra, Ghana</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Personal Loan</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>I took a personal loan for my daughter's university fees. Repayment was flexible and the team was always respectful.</p><div class="reviewer"><div class="reviewer-avatar">AY</div><div><div class="reviewer-name">Amina Yusuf</div><div class="reviewer-role">Teacher, Kaduna, Nigeria</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Internet Banking</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>Opening a membership account remotely from Canada was surprisingly easy. The internet banking portal is clean and reliable.</p><div class="reviewer"><div class="reviewer-avatar">DO</div><div><div class="reviewer-name">David Osei</div><div class="reviewer-role">IT Professional, Toronto, Canada</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">USSD Banking</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>USSD banking changed everything for me. I don't need data to check my balance or transfer money to suppliers.</p><div class="reviewer"><div class="reviewer-avatar">FA</div><div><div class="reviewer-name">Fatima Al-Hassan</div><div class="reviewer-role">Market Trader, Port Harcourt, Nigeria</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">ATM/Debit Card</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>I use my Fastfunds debit card for online purchases here in Dubai. Never had a declined transaction. Very reliable.</p><div class="reviewer"><div class="reviewer-avatar">JO</div><div><div class="reviewer-name">James Okafor</div><div class="reviewer-role">Engineer, Dubai, UAE</div></div></div></div>
+      <div class="testimonial-card fade-in"><div class="quote-mark">"</div><span class="service-badge">Fixed Deposit</span><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>The fixed deposit rate at Fastfunds is unbeatable. I rolled over twice already. Passive income done right.</p><div class="reviewer"><div class="reviewer-avatar">NE</div><div><div class="reviewer-name">Ngozi Eze</div><div class="reviewer-role">Entrepreneur, Lagos, Nigeria</div></div></div></div>
     </div>
   </div>
 </section>
@@ -1588,7 +1597,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo-mark" style="margin-bottom:16px; display:inline-flex;">
-          <div class="logo-icon">FF</div>
+          <div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div>
           <div class="logo-text">
             <span class="logo-name">Fastfunds</span>
             <span class="logo-sub">Cooperative Society Limited</span>
@@ -1622,7 +1631,7 @@
           <li><a href="team.html">Our Team</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">News</a></li>
-          <li><a href="csr.html">Partners</a></li>
+          <li><a href="partners.html">Partners</a></li>
           <li><a href="csr.html">CSR</a></li>
         </ul>
       </div>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner With Us — Fastfunds Cooperative Society Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#D4001A;--primary-dark:#A80015;--gold:#C8992A;--dark:#0A0A0A;--dark-2:#1A1A1A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--gray-3:#CCCCCC;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+.top-bar{background:var(--dark);color:rgba(255,255,255,0.6);font-size:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.top-bar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar a{color:rgba(255,255,255,0.5);text-decoration:none;margin-left:20px;transition:color .2s;}
+.top-bar a:hover{color:var(--white);}
+.top-bar .left{display:flex;gap:20px;align-items:center;}
+.top-bar .left span{display:flex;align-items:center;gap:6px;}
+.top-bar .left i{color:var(--primary);font-size:11px;}
+nav{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:2px solid var(--primary);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,0.12);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:var(--nav-height);gap:32px;}
+.logo{flex-shrink:0;}
+.logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:40px;height:40px;background:var(--dark);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:-1px;}
+.logo-text{line-height:1.1;}
+.logo-name{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:var(--dark);letter-spacing:-0.5px;display:block;}
+.logo-sub{font-size:9px;color:var(--text-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;list-style:none;gap:4px;flex:1;}
+.nav-links li{position:relative;}
+.nav-links a{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:var(--gray-1);color:var(--primary);}
+.nav-links a i{font-size:10px;opacity:0.6;}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:220px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:8px;}
+.nav-links li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown a{display:block;padding:10px 14px;font-size:13.5px;color:var(--text);border-radius:6px;font-weight:400;}.dropdown a:hover{background:var(--gray-1);color:var(--primary);}
+.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
+.btn-partner{padding:9px 18px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:700;background:var(--gold);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-partner:hover{background:#b8871f;}
+input,select,textarea{font-size:16px;}
+.btn-outline{padding:9px 20px;border:1.5px solid var(--primary);border-radius:6px;color:var(--primary);font-size:13.5px;font-weight:600;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-outline:hover{background:var(--primary);color:white;}
+.btn-primary{padding:9px 20px;border:none;border-radius:6px;color:white;font-size:13.5px;font-weight:600;background:var(--primary);cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Instrument Sans',sans-serif;white-space:nowrap;}
+.btn-primary:hover{background:var(--primary-dark);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;border-radius:2px;}
+.mobile-menu{display:none;position:fixed;inset:0;background:white;z-index:2000;padding:24px;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+.close-menu{background:none;border:none;cursor:pointer;font-size:20px;color:var(--text);}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:32px;}
+.mobile-nav-links a{display:block;padding:14px 16px;font-size:16px;font-weight:500;color:var(--text);text-decoration:none;border-radius:8px;}
+.mobile-nav-links a:hover{background:var(--gray-1);color:var(--primary);}
+.mobile-actions{display:flex;flex-direction:column;gap:12px;}
+.mobile-actions .btn-outline,.mobile-actions .btn-primary{display:block;text-align:center;padding:14px;}
+/* PAGE HERO */
+.page-hero{background:var(--dark);padding:72px 0 64px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#1a0008 0%,#0a0a0a 60%);opacity:0.8;}
+.page-hero .container{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:20px;}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;}.breadcrumb a:hover{color:white;}
+.breadcrumb i{font-size:10px;}
+.page-hero h1{font-size:clamp(28px,4vw,48px);font-weight:800;color:white;margin-bottom:16px;letter-spacing:-1px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.7;}
+/* CONTAINER */
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+section{padding:80px 0;}
+/* SECTION LABELS */
+.section-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);margin-bottom:16px;}
+.section-label::before{content:'';width:24px;height:2px;background:var(--primary);}
+.section-title{font-size:clamp(24px,3vw,38px);font-weight:800;line-height:1.15;letter-spacing:-0.5px;margin-bottom:16px;}
+.section-sub{font-size:16px;color:var(--text-muted);line-height:1.7;max-width:600px;}
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+/* WHY PARTNER */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.why-card{background:var(--gray-1);border-radius:16px;padding:32px 28px;border-bottom:3px solid transparent;transition:all .25s;}
+.why-card:hover{border-bottom-color:var(--primary);box-shadow:0 12px 40px rgba(0,0,0,0.08);transform:translateY(-4px);}
+.why-icon{width:56px;height:56px;background:rgba(212,0,26,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.why-icon i{font-size:24px;color:var(--primary);}
+.why-card h3{font-size:17px;font-weight:700;margin-bottom:10px;}
+.why-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+/* PARTNER TYPES */
+.types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.type-card{display:flex;gap:24px;background:white;border:1px solid var(--gray-2);border-radius:16px;padding:32px;transition:all .25s;}
+.type-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08);border-color:var(--primary);}
+.type-icon{width:56px;height:56px;flex-shrink:0;background:rgba(212,0,26,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;}
+.type-icon i{font-size:24px;color:var(--primary);}
+.type-body h3{font-size:18px;font-weight:700;margin-bottom:10px;}
+.type-body p{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+.type-body ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.type-body ul li{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:8px;}
+.type-body ul li::before{content:'✓';color:var(--primary);font-weight:700;font-size:12px;}
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;}
+.steps-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:var(--gray-2);}
+.step{text-align:center;position:relative;}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--primary);color:white;font-family:'Sora',sans-serif;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1;}
+.step h4{font-size:15px;font-weight:700;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--text-muted);line-height:1.5;}
+/* CTA SECTION */
+.cta-section{background:var(--dark);padding:80px 0;}
+.cta-box{background:linear-gradient(135deg,#1a0008,#2d0010);border:1px solid rgba(212,0,26,0.3);border-radius:24px;padding:64px;text-align:center;}
+.cta-box h2{font-size:clamp(24px,3vw,40px);font-weight:800;color:white;margin-bottom:16px;}
+.cta-box p{font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto 40px;line-height:1.7;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{padding:16px 40px;background:var(--gold);color:white;border:none;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-gold:hover{background:#b8871f;transform:translateY(-2px);}
+.btn-outline-white{padding:16px 40px;background:transparent;color:white;border:2px solid rgba(255,255,255,0.3);border-radius:8px;font-size:16px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline-white:hover{border-color:white;background:rgba(255,255,255,0.05);}
+/* TESTIMONIALS */
+.partner-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.quote-card{background:var(--gray-1);border-radius:16px;padding:32px;position:relative;}
+.quote-card::before{content:'"';font-size:80px;line-height:1;color:rgba(212,0,26,0.1);font-family:Georgia,serif;font-weight:900;position:absolute;top:12px;left:20px;}
+.quote-card p{font-size:14px;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:20px;margin-top:24px;}
+.quote-author{display:flex;align-items:center;gap:12px;}
+.quote-avatar{width:40px;height:40px;border-radius:50%;background:var(--primary);color:white;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.quote-name{font-size:14px;font-weight:600;}
+.quote-org{font-size:12px;color:var(--text-muted);}
+/* FOOTER */
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+footer{background:var(--dark);padding:64px 0 0;}
+.footer-brand .logo-name{color:white;font-size:20px;margin-bottom:4px;display:block;}
+.footer-brand .logo-sub{margin-bottom:16px;display:block;color:rgba(255,255,255,0.5);}
+.footer-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.45);margin-bottom:20px;}
+.social-links{display:flex;gap:10px;}
+.social-links a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);font-size:12px;text-decoration:none;transition:all .2s;}
+.social-links a:hover{background:var(--primary);border-color:var(--primary);color:white;}
+.footer-col h5{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-size:13.5px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}.footer-col ul a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:12px;color:rgba(255,255,255,0.3);}
+.footer-bottom a{color:rgba(255,255,255,0.3);text-decoration:none;margin-left:20px;}.footer-bottom a:hover{color:white;}
+.footer-red-bar{height:4px;background:var(--primary);}
+@media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.why-grid{grid-template-columns:repeat(2,1fr);}.steps-grid{grid-template-columns:repeat(2,1fr);}.steps-grid::before{display:none;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}.nav-actions .btn-outline{display:none;}.nav-actions .btn-primary{display:none;}}
+@media(max-width:768px){section{padding:56px 0;}.why-grid{grid-template-columns:1fr;}.types-grid{grid-template-columns:1fr;}.partner-quotes{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.cta-box{padding:40px 24px;}.steps-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <div class="left"><span><i class="fas fa-phone"></i> +234 800 FASTFUNDS</span><span><i class="fas fa-envelope"></i> support@fastfunds.com</span></div>
+    <div class="right"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo"><a href="index.html" class="logo-mark"><div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Personal <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="account-opening.html">Account Opening</a><a href="savings.html">Savings Account</a><a href="fixed-deposit.html">Fixed Deposit</a><a href="loans.html">Loans</a><a href="atm-cards.html">ATM Cards</a><a href="mobile-banking.html">Mobile Banking</a></div></li>
+      <li><a href="#">Business <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="business-loans.html">Business Loans</a><a href="corporate.html">Corporate Accounts</a><a href="pos-terminal.html">POS Terminal</a><a href="sme.html">SME Package</a><a href="sme.html#payroll">Payroll Payments</a></div></li>
+      <li><a href="#">Corporate <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="corporate.html">Corporate Banking</a><a href="corporate.html#invest-acc">Investment Accounts</a><a href="corporate.html#proof-of-funds">Proof of Funds</a><a href="corporate.html#ngo">NGO Accounts</a></div></li>
+      <li><a href="products.html">Services</a></li>
+      <li><a href="#">News & Media <i class="fas fa-chevron-down"></i></a><div class="dropdown"><a href="news.html">Latest News</a><a href="news.html">Press Releases</a><a href="news.html">Media Kit</a></div></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="partners.html" class="btn-partner">Partner With Us</a>
+      <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
+      <a href="account-opening.html" class="btn-primary">Open Account</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header"><a href="index.html" class="logo-mark"><div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div><div class="logo-text"><span class="logo-name">Fastfunds</span></div></a><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button></div>
+  <ul class="mobile-nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul>
+  <div class="mobile-actions"><a href="contact.html?subject=Partnership Inquiry" class="btn-partner" style="text-align:center;padding:14px;">Become a Partner</a><a href="account-opening.html" class="btn-primary">Open Account</a></div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Partners</span></div>
+    <h1>Grow Together With Fastfunds</h1>
+    <p>We partner with employers, NGOs, financial institutions, community leaders, and referral agents to extend quality cooperative financial services to more Nigerians.</p>
+  </div>
+</div>
+
+<!-- WHY PARTNER -->
+<section>
+  <div class="container">
+    <div class="fade-in" style="margin-bottom:48px;">
+      <div class="section-label">Why Partner</div>
+      <h2 class="section-title">The Benefits of Partnering With Us</h2>
+      <p class="section-sub">Fastfunds partnerships are built for mutual growth. We bring the financial infrastructure — you bring the community.</p>
+    </div>
+    <div class="why-grid fade-in">
+      <div class="why-card"><div class="why-icon"><i class="fas fa-coins"></i></div><h3>Revenue Sharing</h3><p>Earn commissions and referral bonuses for every member you bring on board. Our incentive structure is transparent and rewarding.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-users"></i></div><h3>Branded Financial Products</h3><p>We co-create savings schemes, loan packages, and cooperative products tailored to your organisation's workforce or community.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h3>Dedicated Support</h3><p>Every partner gets a dedicated relationship manager, priority processing, and real-time reporting on your partnership performance.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-chart-line"></i></div><h3>Impact & Growth</h3><p>Help your members, employees, and communities access real financial solutions — while growing your organisation's value and reputation.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h3>Regulated & Trusted</h3><p>Fastfunds operates under Nigerian cooperative law. Your brand is associated with a compliant, audited, and trusted financial institution.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-globe-africa"></i></div><h3>Pan-African Reach</h3><p>With members across Nigeria and the diaspora, partnering with Fastfunds connects you to a growing cross-border financial network.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TYPES -->
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Partnership Types</div>
+      <h2 class="section-title">Find Your Partnership Model</h2>
+      <p class="section-sub" style="margin:0 auto;">Choose the partnership type that aligns with your organisation's goals.</p>
+    </div>
+    <div class="types-grid fade-in">
+      <div class="type-card">
+        <div class="type-icon"><i class="fas fa-building"></i></div>
+        <div class="type-body">
+          <h3>Corporate & Employer Partnerships</h3>
+          <p>We work with employers to bring payroll savings, emergency loans, and financial wellness benefits to their workforce at zero cost to the company.</p>
+          <ul><li>Payroll-linked savings for staff</li><li>Emergency loan access for employees</li><li>Group cooperative membership</li><li>Financial literacy workshops</li></ul>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><i class="fas fa-hands-helping"></i></div>
+        <div class="type-body">
+          <h3>NGO & Community Partners</h3>
+          <p>Partner with us to bring cooperative banking to underserved communities, market associations, religious groups, and grassroots cooperatives.</p>
+          <ul><li>Micro-savings products for groups</li><li>Cooperative setup support</li><li>Community loan schemes</li><li>Agent banking integration</li></ul>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><i class="fas fa-user-friends"></i></div>
+        <div class="type-body">
+          <h3>Referral Partners</h3>
+          <p>Individuals and organisations can earn competitive commissions by referring customers who open accounts or take loans with Fastfunds.</p>
+          <ul><li>Earn per successful referral</li><li>Real-time referral dashboard</li><li>Monthly commission payouts</li><li>No upfront investment needed</li></ul>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><i class="fas fa-university"></i></div>
+        <div class="type-body">
+          <h3>Financial Institution Partners</h3>
+          <p>We welcome collaborations with banks, MFBs, fintechs, and insurance providers to co-create and cross-distribute financial products.</p>
+          <ul><li>Product co-creation</li><li>Cross-referral agreements</li><li>API and data integration</li><li>Shared customer programmes</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">Process</div>
+      <h2 class="section-title">How to Become a Partner</h2>
+      <p class="section-sub" style="margin:0 auto;">Simple, fast, and fully supported from day one.</p>
+    </div>
+    <div class="steps-grid fade-in">
+      <div class="step"><div class="step-num">1</div><h4>Submit Interest</h4><p>Fill in our partnership enquiry form or send us an email with your organisation details.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Discovery Call</h4><p>Our partnerships team will schedule a call to understand your needs and propose the best model.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Agreement & Onboarding</h4><p>We formalise the partnership with a simple agreement and onboard your team or community.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Launch & Grow</h4><p>Go live with your branded programme and start earning while your community benefits.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER QUOTES -->
+<section style="background:var(--gray-1);">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Partner Stories</div>
+      <h2 class="section-title">What Our Partners Say</h2>
+    </div>
+    <div class="partner-quotes fade-in">
+      <div class="quote-card"><p>Fastfunds set up a payroll savings scheme for our 200-person team in under two weeks. Staff retention has genuinely improved since then.</p><div class="quote-author"><div class="quote-avatar">AO</div><div><div class="quote-name">Adewale Odunsi</div><div class="quote-org">HR Director, Lagos Manufacturing Co.</div></div></div></div>
+      <div class="quote-card"><p>As a market association, we needed a savings partner who understood our members. Fastfunds delivered a group product that actually works for traders.</p><div class="quote-author"><div class="quote-avatar">FK</div><div><div class="quote-name">Folake Kehinde</div><div class="quote-org">Chairwoman, Balogun Market Traders Association</div></div></div></div>
+      <div class="quote-card"><p>The referral programme is genuinely the best I've seen. The dashboard is clear, commissions are paid on time, and the team is always available.</p><div class="quote-author"><div class="quote-avatar">CC</div><div><div class="quote-name">Chidi Chukwu</div><div class="quote-org">Independent Referral Partner, Enugu</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box fade-in">
+      <h2>Ready to Build Something Together?</h2>
+      <p>Send us a partnership enquiry and our team will get back to you within 24 hours. No obligation — just a conversation.</p>
+      <div class="cta-btns">
+        <a href="contact.html?subject=Partnership Inquiry" class="btn-gold"><i class="fas fa-handshake"></i> Start a Partnership</a>
+        <a href="contact.html" class="btn-outline-white"><i class="fas fa-phone"></i> Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-mark" style="margin-bottom:16px;display:inline-flex;"><div class="logo-icon"><span style="color:#D4001A">M</span><span style="color:#0066CC">K</span></div><div class="logo-text"><span class="logo-name">Fastfunds</span><span class="logo-sub">Cooperative Society Limited</span></div></a>
+        <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="loans.html">Personal Loans</a></li><li><a href="business-loans.html">Business Loans</a></li><li><a href="savings.html">Savings Account</a></li><li><a href="fixed-deposit.html">Fixed Deposits</a></li><li><a href="atm-cards.html">ATM Cards</a></li><li><a href="pos-terminal.html">POS Terminal</a></li><li><a href="investments.html">Investments</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="partners.html">Partners</a></li><li><a href="csr.html">CSR</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="help.html">Help Center</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html">FAQs</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html?tab=terms">Terms of Use</a></li><li><a href="complaints.html">Complaints</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="privacy.html?tab=terms">Terms of Use</a><a href="privacy.html?tab=cookie">Cookie Policy</a></div></div>
+  </div>
+  <div class="footer-red-bar"></div>
+</footer>
+
+<script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
