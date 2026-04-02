@@ -120,7 +120,7 @@ input,select,textarea{font-size:16px;}
   .partner-logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
   .partner-logo-pill{background:var(--gray-1);border:1px solid var(--gray-2);border-radius:8px;padding:12px 24px;font-size:13.5px;font-weight:600;color:var(--text-muted);}
   @media(max-width:1024px){.impact-grid{grid-template-columns:repeat(2,1fr);}.impact-stat{border-right:none;border-bottom:1px solid var(--gray-2);}.pillar-grid{grid-template-columns:1fr 1fr;}}
-  @media(max-width:768px){.pillar-grid{grid-template-columns:1fr;}.impact-grid{grid-template-columns:1fr;}}
+  @media(max-width:768px){.pillar-grid{grid-template-columns:1fr;}.impact-grid{grid-template-columns:1fr;}.csr-progs-grid{grid-template-columns:1fr!important;gap:24px!important;}}
 
   /* ── MEGA MENU ── */
   .mega-menu{position:absolute;top:calc(100% + 8px);left:-80px;background:white;border:1px solid var(--gray-2);border-top:3px solid var(--primary);border-radius:0 0 12px 12px;min-width:560px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;z-index:200;}
@@ -323,7 +323,7 @@ input,select,textarea{font-size:16px;}
   <div class="container">
     <div class="section-label">Initiatives</div>
     <h2 class="section-title">Active Programmes</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;" class="csr-progs-grid">
       <div class="initiative-list">
         <div class="initiative-item fade-in">
           <div class="init-icon"><i class="fas fa-school"></i></div>
