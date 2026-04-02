@@ -251,9 +251,9 @@
     background-size: cover;
     background-position: center;
   }
-  .slide-1 .slide-bg { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80'); background-size: cover; background-position: center; }
-  .slide-2 .slide-bg { background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80'); background-size: cover; background-position: center; }
-  .slide-3 .slide-bg { background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80'); background-size: cover; background-position: center; }
+  .slide-1 .slide-bg { background: linear-gradient(135deg, #0a0a0a 0%, #2a0010 50%, #1a0008 100%); }
+  .slide-2 .slide-bg { background: linear-gradient(135deg, #0a0a0a 0%, #0d1f0a 50%, #0a1a10 100%); }
+  .slide-3 .slide-bg { background: linear-gradient(135deg, #0a0a0a 0%, #0a0d2a 50%, #10152a 100%); }
 
   .slide-overlay {
     position: absolute;
@@ -1096,6 +1096,8 @@
     .top-bar .right { display: none; }
     .nav-actions .btn-outline { display: none; }
     .nav-actions .btn-primary { display: none; }
+    .nav-actions .btn-partner { display: none; }
+    .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
@@ -1136,9 +1138,8 @@
     </div>
     <div class="right">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>
 </div>
@@ -1219,6 +1220,7 @@
     <li><a href="about.html">About Us</a></li>
     <li><a href="news.html">News &amp; Media</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li><a href="partners.html" style="color:var(--primary);font-weight:700;">Partner With Us</a></li>
   </ul>
   <div class="mobile-actions">
     <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
@@ -1281,23 +1283,6 @@
     <button class="dot" data-index="2"></button>
   </div>
 </section>
-
-<!-- QUICK ACCESS -->
-<div class="quick-access">
-  <div class="quick-scroll">
-    <a href="internet-banking.html" class="quick-item"><i class="fas fa-globe"></i><span>Internet Banking</span></a>
-    <a href="mobile-banking.html" class="quick-item"><i class="fas fa-mobile-alt"></i><span>Mobile App</span></a>
-    <a href="loans.html" class="quick-item"><i class="fas fa-hand-holding-usd"></i><span>Loans</span></a>
-    <a href="atm-cards.html" class="quick-item"><i class="fas fa-credit-card"></i><span>ATM Cards</span></a>
-    <a href="pos-terminal.html" class="quick-item"><i class="fas fa-cash-register"></i><span>POS Terminal</span></a>
-    <a href="account-opening.html" class="quick-item"><i class="fas fa-user-plus"></i><span>Open Account</span></a>
-    <a href="corporate.html#proof-of-funds" class="quick-item"><i class="fas fa-file-invoice"></i><span>Proof of Funds</span></a>
-    <a href="loans.html" class="quick-item"><i class="fas fa-car"></i><span>Car for Cash</span></a>
-    <a href="corporate.html" class="quick-item"><i class="fas fa-building"></i><span>Corporate</span></a>
-    <a href="investments.html" class="quick-item"><i class="fas fa-chart-pie"></i><span>Investments</span></a>
-    <a href="contact.html" class="quick-item"><i class="fas fa-users"></i><span>USSD Banking</span></a>
-  </div>
-</div>
 
 <!-- PRODUCTS -->
 <section class="products-section" id="products">
@@ -1614,10 +1599,8 @@
         <p>Empowering members, building futures together. A trusted cooperative society providing financial services across Nigeria.</p>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer-col">
