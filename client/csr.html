@@ -89,7 +89,7 @@ input,select,textarea{font-size:16px;}
   .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0);}
   @media(max-width:1024px){.nav-links{display:none;}.hamburger{display:block;}.mobile-menu{display:block;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
-  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar .right{display:none;}.nav-actions .btn-outline{display:none;}.nav-actions .btn-primary{display:none;}.nav-actions .btn-partner{display:none;}}
+  @media(max-width:768px){section{padding:56px 0;}.footer-grid{grid-template-columns:1fr;}.top-bar{display:none;}.nav-actions .btn-outline{display:none;}.nav-actions .btn-primary{display:none;}.nav-actions .btn-partner{display:none;}}
 
   .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
   .impact-stat{text-align:center;padding:40px 24px;border-right:1px solid var(--gray-2);}
@@ -132,7 +132,14 @@ input,select,textarea{font-size:16px;}
   .btn-partner{background:var(--primary)!important;}
   .btn-partner:hover{background:var(--primary-dark)!important;}
 
-  </style>
+  
+  /* Active nav state */
+  .nav-links a.active { color: var(--primary) !important; font-weight: 600; }
+  .mobile-nav-links a.active { color: var(--primary) !important; background: var(--gray-1); border-radius: 8px; }
+
+  /* Mobile actions Partner With Us button */
+  .mobile-actions .btn-partner { display: block; text-align: center; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 600; color: #fff !important; text-decoration: none; }
+</style>
 </head>
 <body>
 
@@ -215,9 +222,9 @@ input,select,textarea{font-size:16px;}
     <li><a href="about.html">About Us</a></li>
     <li><a href="news.html">News &amp; Media</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="partners.html" style="color:var(--primary);font-weight:700;">Partner With Us</a></li>
-  </ul>
+    </ul>
   <div class="mobile-actions">
+    <a href="partners.html" class="btn-partner">Partner With Us</a>
     <a href="internet-banking.html" class="btn-outline">Internet Banking</a>
     <a href="account-opening.html" class="btn-primary">Open Account</a>
   </div>
