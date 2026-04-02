@@ -1696,8 +1696,10 @@
   function nextSlide() { goTo(current + 1); }
   function prevSlide() { goTo(current - 1); }
 
-  document.getElementById('nextBtn').addEventListener('click', () => { clearInterval(autoPlay); nextSlide(); autoPlay = setInterval(nextSlide, 5000); });
-  document.getElementById('prevBtn').addEventListener('click', () => { clearInterval(autoPlay); prevSlide(); autoPlay = setInterval(nextSlide, 5000); });
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  if (nextBtn) nextBtn.addEventListener('click', () => { clearInterval(autoPlay); nextSlide(); autoPlay = setInterval(nextSlide, 5000); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { clearInterval(autoPlay); prevSlide(); autoPlay = setInterval(nextSlide, 5000); });
   dots.forEach(d => d.addEventListener('click', () => { clearInterval(autoPlay); goTo(+d.dataset.index); autoPlay = setInterval(nextSlide, 5000); }));
 
   // Product tabs
