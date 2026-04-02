@@ -405,6 +405,20 @@ input,select,textarea{font-size:16px;}
   </div>
 </section>
 <script>
+
+(function(){
+  const path=window.location.pathname;
+  const page=path.split('/').pop()||'/';
+  document.querySelectorAll('.nav-links a,.mobile-nav-links a').forEach(function(link){
+    const href=(link.getAttribute('href')||'').split('#')[0];
+    const isHome=(href==='/'||href==='index.html')&&(page==='/'||page===''||page==='index.html');
+    if(href&&(href===page||isHome)){
+      link.classList.add('active');
+      const p=link.closest('.has-mega');
+      if(p)p.querySelector(':scope > a').classList.add('active');
+    }
+  });
+})();
   document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));

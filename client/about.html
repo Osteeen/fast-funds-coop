@@ -465,6 +465,20 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
 </footer>
 
 <script>
+
+(function(){
+  const path=window.location.pathname;
+  const page=path.split('/').pop()||'/';
+  document.querySelectorAll('.nav-links a,.mobile-nav-links a').forEach(function(link){
+    const href=(link.getAttribute('href')||'').split('#')[0];
+    const isHome=(href==='/'||href==='index.html')&&(page==='/'||page===''||page==='index.html');
+    if(href&&(href===page||isHome)){
+      link.classList.add('active');
+      const p=link.closest('.has-mega');
+      if(p)p.querySelector(':scope > a').classList.add('active');
+    }
+  });
+})();
 const navbar=document.getElementById('navbar');
 window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
 document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
