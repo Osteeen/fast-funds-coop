@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--primary:#D4001A;--primary-dark:#A80015;--dark:#0A0A0A;--gray-1:#F7F7F7;--gray-2:#EFEFEF;--text:#1A1A1A;--text-muted:#666666;--white:#FFFFFF;--nav-height:72px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;overflow-x:hidden;}
 body{font-family:'Instrument Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
 h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
 .top-bar{background:var(--dark);color:rgba(255,255,255,0.6);font-size:12px;padding:8px 0;}
@@ -111,8 +111,37 @@ footer{background:#1A1A1A;color:rgba(255,255,255,0.6);padding:64px 0 0;}
   .nav-links a.active { color: var(--primary) !important; font-weight: 600; }
   .mobile-nav-links a.active { color: var(--primary) !important; background: var(--gray-1); border-radius: 8px; }
 
-  /* Mobile actions Partner With Us button */
-  .mobile-actions .btn-partner { display: block; text-align: center; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 600; color: #fff !important; text-decoration: none; }
+  /* Mobile actions — all three buttons identical: white bg, red text */
+  .mobile-actions .btn-partner,
+  .mobile-actions .btn-outline,
+  .mobile-actions .btn-primary {
+    display: block !important;
+    text-align: center;
+    padding: 14px;
+    background: white !important;
+    color: var(--primary) !important;
+    border: 1.5px solid var(--primary) !important;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .mobile-actions .btn-partner:hover,
+  .mobile-actions .btn-outline:hover,
+  .mobile-actions .btn-primary:hover {
+    background: var(--primary) !important;
+    color: white !important;
+  }
+  /* Stats badge responsive */
+  @media(max-width:600px) {
+    .about-img-badge { gap: 12px !important; padding: 14px !important; }
+    .about-img-badge .num { font-size: 20px !important; }
+    .about-img-badge .lbl { font-size: 10px !important; }
+    .about-img-badge > div:not(.stat) { display: none !important; }
+    .about-stats-row { gap: 12px !important; }
+    .about-stats-row .stat-divider { display: none !important; }
+    .about-stats-row .stat-item > div:first-child { font-size: 22px !important; }
+  }
 </style>
 </head>
 <body>
