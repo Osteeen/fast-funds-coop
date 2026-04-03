@@ -1699,10 +1699,11 @@
   // Active nav state
   (function() {
     const path = window.location.pathname;
-    const page = path.split('/').pop() || '/';
+    const raw = path.split('/').pop() || '/';
+    const page = raw.replace(/\.html$/, '');
     document.querySelectorAll('.nav-links a, .mobile-nav-links a, .footer-col ul a').forEach(link => {
-      const href = (link.getAttribute('href') || '').split('#')[0];
-      const isHome = (href === '/' || href === 'index.html') && (page === '/' || page === '' || page === 'index.html');
+      const href = (link.getAttribute('href') || '').split('#')[0].replace(/\.html$/, '');
+      const isHome = (href === '/' || href === 'index' || href === '') && (page === '/' || page === '' || page === 'index');
       if (href && (href === page || isHome)) {
         link.classList.add('active');
         const megaParent = link.closest('.has-mega');
