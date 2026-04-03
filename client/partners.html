@@ -425,7 +425,6 @@ footer{background:var(--dark);padding:64px 0 0;}
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="faq.html">FAQs</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="privacy.html?tab=terms">Terms of Use</a></li>
           <li><a href="complaints.html">Complaints</a></li>
         </ul>
       </div>
@@ -434,8 +433,6 @@ footer{background:var(--dark);padding:64px 0 0;}
       <span>&copy; 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
       <div>
         <a href="privacy.html">Privacy Policy</a>
-        <a href="privacy.html?tab=terms">Terms of Use</a>
-        <a href="privacy.html?tab=cookie">Cookie Policy</a>
       </div>
     </div>
   </div>
@@ -443,7 +440,7 @@ footer{background:var(--dark);padding:64px 0 0;}
 
 <script>
 
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   const path=window.location.pathname;
   const raw=path.split('/').pop()||'/';
   const page=raw.replace(/\.html$/,'');
@@ -456,7 +453,7 @@ footer{background:var(--dark);padding:64px 0 0;}
       if(p)p.querySelector(':scope > a').classList.add('active');
     }
   });
-})();
+});
 const navbar=document.getElementById('navbar');
 window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
 document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));

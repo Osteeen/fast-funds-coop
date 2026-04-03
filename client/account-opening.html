@@ -345,7 +345,7 @@ input,select,textarea{font-size:16px;}
 </section>
 <script>
 
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   const path=window.location.pathname;
   const raw=path.split('/').pop()||'/';
   const page=raw.replace(/\.html$/,'');
@@ -358,7 +358,7 @@ input,select,textarea{font-size:16px;}
       if(p)p.querySelector(':scope > a').classList.add('active');
     }
   });
-})();
+});
   function selectType(el){document.querySelectorAll('.acc-type').forEach(e=>e.classList.remove('selected'));el.classList.add('selected');}
 </script>
 
@@ -409,7 +409,6 @@ input,select,textarea{font-size:16px;}
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="faq.html">FAQs</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="privacy.html?tab=terms">Terms of Use</a></li>
           <li><a href="complaints.html">Complaints</a></li>
         </ul>
       </div>
@@ -418,8 +417,6 @@ input,select,textarea{font-size:16px;}
       <span>&copy; 2025 Fastfunds Cooperative Society Limited. All rights reserved.</span>
       <div>
         <a href="privacy.html">Privacy Policy</a>
-        <a href="privacy.html?tab=terms">Terms of Use</a>
-        <a href="privacy.html?tab=cookie">Cookie Policy</a>
       </div>
     </div>
   </div>
