@@ -133,6 +133,7 @@ input,select,textarea{font-size:16px;}
   /* Active nav state */
   .nav-links a.active { color: var(--primary) !important; font-weight: 600; }
   .mobile-nav-links a.active { color: var(--primary) !important; background: var(--gray-1); border-radius: 8px; }
+  .footer-col ul a.active { color: white !important; font-weight: 600; }
 
   /* Mobile actions — all three buttons identical: white bg, red text */
   .mobile-actions .btn-partner,
@@ -383,7 +384,7 @@ input,select,textarea{font-size:16px;}
 (function(){
   const path=window.location.pathname;
   const page=path.split('/').pop()||'/';
-  document.querySelectorAll('.nav-links a,.mobile-nav-links a').forEach(function(link){
+  document.querySelectorAll('.nav-links a,.mobile-nav-links a,.footer-col ul a').forEach(function(link){
     const href=(link.getAttribute('href')||'').split('#')[0];
     const isHome=(href==='/'||href==='index.html')&&(page==='/'||page===''||page==='index.html');
     if(href&&(href===page||isHome)){

@@ -161,6 +161,7 @@ input,select,textarea{font-size:16px;}
   /* Active nav state */
   .nav-links a.active { color: var(--primary) !important; font-weight: 600; }
   .mobile-nav-links a.active { color: var(--primary) !important; background: var(--gray-1); border-radius: 8px; }
+  .footer-col ul a.active { color: white !important; font-weight: 600; }
 
   /* Mobile actions — all three buttons identical: white bg, red text */
   .mobile-actions .btn-partner,
@@ -308,7 +309,7 @@ input,select,textarea{font-size:16px;}
     <div class="section-label">Features</div>
     <h2 class="section-title">What You Get</h2>
     <p class="section-sub">Everything you need, designed around your financial goals.</p>
-    <div class="features-grid"><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-percentage"></i></div><h3>High-Yield Returns</h3><p>Earn up to 18% per annum through our cooperative investment pools — far above typical bank savings rates.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Capital Protection</h3><p>Your invested principal is protected. Fastfunds does not invest member funds in volatile or speculative instruments.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Cooperative Dividends</h3><p>As a Fastfunds share member, you earn annual dividends based on the cooperative's profit performance and your share holdings.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-file-chart-line"></i></div><h3>Investment Dashboard</h3><p>Track your portfolio, interest accruals, maturity dates, and total returns in real time through your member portal.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-sync-alt"></i></div><h3>Reinvestment Option</h3><p>Automatically reinvest returns at maturity to compound your wealth over time — a powerful long-term wealth strategy.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>Investment Advisory</h3><p>Book a free session with our investment adviser to understand which product fits your financial goals and risk tolerance.</p></div></div>
+    <div class="features-grid"><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-percentage"></i></div><h3>High-Yield Returns</h3><p>Earn up to 18% per annum through our cooperative investment pools — far above typical bank savings rates.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Capital Protection</h3><p>Your invested principal is protected. Fastfunds does not invest member funds in volatile or speculative instruments.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Cooperative Dividends</h3><p>As a Fastfunds share member, you earn annual dividends based on the cooperative's profit performance and your share holdings.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Investment Dashboard</h3><p>Track your portfolio, interest accruals, maturity dates, and total returns in real time through your member portal.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-sync-alt"></i></div><h3>Reinvestment Option</h3><p>Automatically reinvest returns at maturity to compound your wealth over time — a powerful long-term wealth strategy.</p></div><div class="feature-card fade-in"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>Investment Advisory</h3><p>Book a free session with our investment adviser to understand which product fits your financial goals and risk tolerance.</p></div></div>
   </div>
 </section>
 
@@ -355,7 +356,7 @@ input,select,textarea{font-size:16px;}
 (function(){
   const path=window.location.pathname;
   const page=path.split('/').pop()||'/';
-  document.querySelectorAll('.nav-links a,.mobile-nav-links a').forEach(function(link){
+  document.querySelectorAll('.nav-links a,.mobile-nav-links a,.footer-col ul a').forEach(function(link){
     const href=(link.getAttribute('href')||'').split('#')[0];
     const isHome=(href==='/'||href==='index.html')&&(page==='/'||page===''||page==='index.html');
     if(href&&(href===page||isHome)){
